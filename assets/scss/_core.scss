@@ -1,0 +1,59 @@
+#app {
+  min-height: 100vh;
+
+  .page-margin {
+    max-width: breaks(desktop-wide);
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @media (min-width: breaks(phablet)) {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+
+    @media (min-width: breaks(desktop-wide)) {
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  article {
+    min-height: 100vh;
+    height: 100%;
+    padding: 2rem;
+
+    @media (min-width: breaks(phablet)) {
+      font-size: 0.8em;
+    }
+
+    @media (min-width: breaks(small-tablet)) {
+      padding: 2rem 1rem;
+    }
+
+    @media (min-width: breaks(large-tablet)) {
+      font-size: 0.9em;
+    }
+
+    @media (min-width: breaks(desktop)) {
+      padding: 3rem;
+      font-size: 1em;
+    }
+
+    h1 {
+      font-size: 1.5em;
+
+      @media (min-width: breaks(phablet)) {
+        font-size: 2em;
+      }
+    }
+  }
+}
+
+body {
+  font-size: 1rem;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
