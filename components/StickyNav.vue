@@ -27,10 +27,9 @@
         <nuxt-link to="/account" class="text-xl px-4 text-primary hover:text-primary-dark transition-all duration-300">
           <i class="fas fa-user" />
         </nuxt-link>
-        <nuxt-link to="/cart" class="w-max px-3 py-2 block rounded border font-light text-sm bg-primary text-white hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300">
-          <i class="fas fa-shopping-basket pr-1" />
+        <LoftusButtonLink to="/cart" icon="fas fa-shopping-basket" variant="primary" hover="outline" class="w-max bg-primary text-white hover:bg-transparent hover:text-primary hover:border-primary">
           <span class="cart-size">{{ cartSize }} items</span>
-        </nuxt-link>
+        </LoftusButtonLink>
       </div>
     </div>
   </section>

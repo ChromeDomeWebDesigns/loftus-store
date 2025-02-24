@@ -4,8 +4,8 @@
       <h3 class="uppercase text-3xl font-bold">Subscribe to our newsletter</h3>
       <p class="text-xs text-gray-50 font-light pb-4">Get the latest updates on new products and upcoming sales</p>
       <div class="flex items-center justify-center w-full">
-        <input type="email" placeholder="Email" class="rounded py-2 px-4 text-black w-full max-w-2xl">
-        <button class="rounded bg-primary-dark text-white px-3 py-2 ml-2 hover:bg-white hover:text-primary transition-all duration-300">Subscribe</button>
+        <LoftusEmailInput class="text-black w-full max-w-2xl" />
+        <LoftusButton class="ml-2 bg-primary-dark border-primary-dark text-white hover:bg-white hover:text-primary">Subscribe</LoftusButton>
       </div>
     </div>
 
