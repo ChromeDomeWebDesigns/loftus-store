@@ -22,14 +22,9 @@
   article {
     min-height: 100vh;
     height: 100%;
-    padding: 2rem;
 
     @media (min-width: breaks(phablet)) {
       font-size: 0.8em;
-    }
-
-    @media (min-width: breaks(small-tablet)) {
-      padding: 2rem 1rem;
     }
 
     @media (min-width: breaks(large-tablet)) {
@@ -37,16 +32,7 @@
     }
 
     @media (min-width: breaks(desktop)) {
-      padding: 3rem;
       font-size: 1em;
-    }
-
-    h1 {
-      font-size: 1.5em;
-
-      @media (min-width: breaks(phablet)) {
-        font-size: 2em;
-      }
     }
   }
 }

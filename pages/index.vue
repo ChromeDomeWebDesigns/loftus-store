@@ -1,6 +1,6 @@
 <template>
   <article>
-    <h1>Loftus International</h1>
+    <LandingHero />
   </article>
 </template>
 

@@ -9,20 +9,20 @@ module.exports = {
           "dark": "#0B5EB3"
         }
       },
-    },
-    "screens": {
-      "legacy-phone": "350px",
-      "phone": "400px",
-      "phablet": "600px",
-      "small-tablet": "700px",
-      "tablet": "800px",
-      "large-tablet": "900px",
-      "laptop": "1000px",
-     " desktop": "1200px",
-      "desktop-wide": "1400px",
-      "wide": "1600px",
-      "superwide": "1800px",
-      "max": "1920px"
+      "screens": {
+        "legacy-phone": "350px",
+        "phone": "400px",
+        "phablet": "600px",
+        "small-tablet": "700px",
+        "tablet": "800px",
+        "large-tablet": "900px",
+        "laptop": "1000px",
+       " desktop": "1200px",
+        "desktop-wide": "1400px",
+        "wide": "1600px",
+        "superwide": "1800px",
+        "max": "1920px"
+      },
     },
     "fontSize": {
       "xxs": "0.625em",
@@ -35,7 +35,9 @@ module.exports = {
       "3xl": "1.625em",
       "4xl": "1.75em",
       "5xl": "1.875em",
-      "6xl": "2em"
+      "6xl": "2em",
+      "7xl": "2.5em",
+      "8xl": "3em"
     }
   },
   "content": {
