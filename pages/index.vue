@@ -1,6 +1,7 @@
 <template>
   <article>
     <LandingHero />
+    <LandingTopCategories />
   </article>
 </template>
 
