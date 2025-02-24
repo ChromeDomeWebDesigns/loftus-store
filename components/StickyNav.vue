@@ -9,7 +9,7 @@
       <nuxt-link to="/">
         <img src="/images/Logo.png" width="75px">
       </nuxt-link>
-      <div class="collapse w-full" :class="{ 'show': showNav }">
+      <div class="nav-collapse w-full" :class="{ 'show': showNav }">
         <nav class="flex items-center tablet:flex-row flex-col p-4">
           <div class="flex flex-1 justify-center tablet:flex-row flex-col">
             <nuxt-link class="mx-3 laptop:mx-6 font-light hover:text-primary transition-all duration-300" to="/menu-1">Menu Item 1</nuxt-link>
@@ -28,7 +28,7 @@
           <i class="fas fa-user" />
         </nuxt-link>
         <nuxt-link to="/cart" class="w-max px-3 py-2 block rounded border font-light text-sm bg-primary text-white hover:bg-transparent hover:text-primary hover:border-primary transition-all duration-300">
-          <i class="fas fa-shopping-basket" />
+          <i class="fas fa-shopping-basket pr-1" />
           <span class="cart-size">{{ cartSize }} items</span>
         </nuxt-link>
       </div>
@@ -36,21 +36,17 @@
   </section>
 </template>
 
-<script>
-  export default {
-    name: 'StickyNav',
-    data () {
-      return {
-        showNav: false,
-      }
-    },
-    computed: {
-      cartSize() {
-        // TODO: Hookup Cart Information
-        return 0
-      },
-    },
-  }
+<script setup>
+  import { ref, computed } from 'vue'
+
+  // Reactive state
+  const showNav = ref(false)
+
+  // Computed property
+  const cartSize = computed(() => {
+    // TODO: Hook up Cart Information
+    return 0
+  })
 </script>
 
 <style lang="scss" scoped>
@@ -68,7 +64,7 @@
     }
 
     @media (max-width: breaks(tablet)) {
-      .collapse {
+      .nav-collapse {
         top: 0;
         left: 0;
         margin-top: 4rem;
