@@ -49,19 +49,19 @@
         <h5 class="text-lg uppercase font-semibold">Products</h5>
         <ul class="text-sm mt-2">
           <li class="my-2">
-            <nuxt-link class="hover:text-gray-200 transition-all duration-300" to="/featured-products">Featured Products</nuxt-link>
+            <LoftusLink class="hover:text-gray-200" to="/featured-products">Featured Products</LoftusLink>
           </li>
           <li class="my-2">
-            <nuxt-link class="hover:text-gray-200 transition-all duration-300" to="/bestselling-products">Bestselling Products</nuxt-link>
+            <LoftusLink class="hover:text-gray-200" to="/bestselling-products">Bestselling Products</LoftusLink>
           </li>
           <li class="my-2">
-            <nuxt-link class="hover:text-gray-200 transition-all duration-300" to="/latest-products">Latest Products</nuxt-link>
+            <LoftusLink class="hover:text-gray-200" to="/latest-products">Latest Products</LoftusLink>
           </li>
           <li class="my-2">
-            <nuxt-link class="hover:text-gray-200 transition-all duration-300" to="/special-products">Special Products</nuxt-link>
+            <LoftusLink class="hover:text-gray-200" to="/special-products">Special Products</LoftusLink>
           </li>
           <li class="my-2">
-            <nuxt-link class="hover:text-gray-200 transition-all duration-300" to="/top-rated-products">Top Rated Products</nuxt-link>
+            <LoftusLink class="hover:text-gray-200" to="/top-rated-products">Top Rated Products</LoftusLink>
           </li>
         </ul>
       </div>
@@ -70,19 +70,19 @@
         <h5 class="text-lg uppercase font-semibold">Important links</h5>
         <ul class="text-sm mt-2">
           <li class="my-2">
-            <nuxt-link class="hover:text-gray-200 transition-all duration-300" to="/about">About Us</nuxt-link>
+            <LoftusLink class="hover:text-gray-200" to="/about">About Us</LoftusLink>
           </li>
           <li class="my-2">
-            <nuxt-link class="hover:text-gray-200 transition-all duration-300" to="/contact">Contact</nuxt-link>
+            <LoftusLink class="hover:text-gray-200" to="/contact">Contact</LoftusLink>
           </li>
           <li class="my-2">
-            <nuxt-link class="hover:text-gray-200 transition-all duration-300" to="/return-policy">Return Policy</nuxt-link>
+            <LoftusLink class="hover:text-gray-200" to="/return-policy">Return Policy</LoftusLink>
           </li>
           <li class="my-2">
-            <nuxt-link class="hover:text-gray-200 transition-all duration-300" to="/privacy-products">Privacy Policy</nuxt-link>
+            <LoftusLink class="hover:text-gray-200" to="/privacy-products">Privacy Policy</LoftusLink>
           </li>
           <li class="my-2">
-            <nuxt-link class="hover:text-gray-200 transition-all duration-300" to="/terms-conditions">Terms & Conditions</nuxt-link>
+            <LoftusLink class="hover:text-gray-200" to="/terms-conditions">Terms & Conditions</LoftusLink>
           </li>
         </ul>
       </div>
@@ -91,16 +91,16 @@
         <h5 class="text-lg uppercase font-semibold">Extra</h5>
         <ul class="text-sm mt-2">
           <li class="my-2">
-            <nuxt-link class="hover:text-gray-200 transition-all duration-300" to="/search">Search</nuxt-link>
+            <LoftusLink class="hover:text-gray-200" to="/search">Search</LoftusLink>
           </li>
           <li class="my-2">
-            <nuxt-link class="hover:text-gray-200 transition-all duration-300" to="/account">Account</nuxt-link>
+            <LoftusLink class="hover:text-gray-200" to="/account">Account</LoftusLink>
           </li>
           <li class="my-2">
-            <nuxt-link class="hover:text-gray-200 transition-all duration-300" to="/news">News</nuxt-link>
+            <LoftusLink class="hover:text-gray-200" to="/news">News</LoftusLink>
           </li>
           <li class="my-2">
-            <nuxt-link class="hover:text-gray-200 transition-all duration-300" to="/all-products">All Products</nuxt-link>
+            <LoftusLink class="hover:text-gray-200" to="/all-products">All Products</LoftusLink>
           </li>
         </ul>
       </div>

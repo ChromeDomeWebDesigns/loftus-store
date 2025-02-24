@@ -6,27 +6,27 @@
           <i class="fas fa-bars" />
         </button>
       </div>
-      <nuxt-link to="/">
+      <LoftusLink to="/">
         <img src="/images/Logo.png" width="75px">
-      </nuxt-link>
+      </LoftusLink>
       <div class="nav-collapse w-full" :class="{ 'show': showNav }">
         <nav class="flex items-center tablet:flex-row flex-col p-4">
           <div class="flex flex-1 justify-center tablet:flex-row flex-col">
-            <nuxt-link class="mx-3 laptop:mx-6 font-light hover:text-primary transition-all duration-300" to="/menu-1">Menu Item 1</nuxt-link>
-            <nuxt-link class="mx-3 laptop:mx-6 font-light hover:text-primary transition-all duration-300" to="/menu-2">Menu Item 2</nuxt-link>
-            <nuxt-link class="mx-3 laptop:mx-6 font-light hover:text-primary transition-all duration-300" to="/menu-3">Menu Item 3</nuxt-link>
-            <nuxt-link class="mx-3 laptop:mx-6 font-light hover:text-primary transition-all duration-300" to="/menu-4">Menu Item 4</nuxt-link>
-            <nuxt-link class="mx-3 laptop:mx-6 font-light hover:text-primary transition-all duration-300" to="/menu-5">Menu Item 5</nuxt-link>
+            <LoftusLink class="mx-3 laptop:mx-6 font-light hover:text-primary hover:no-underline" to="/menu-1">Menu Item 1</LoftusLink>
+            <LoftusLink class="mx-3 laptop:mx-6 font-light hover:text-primary hover:no-underline" to="/menu-2">Menu Item 2</LoftusLink>
+            <LoftusLink class="mx-3 laptop:mx-6 font-light hover:text-primary hover:no-underline" to="/menu-3">Menu Item 3</LoftusLink>
+            <LoftusLink class="mx-3 laptop:mx-6 font-light hover:text-primary hover:no-underline" to="/menu-4">Menu Item 4</LoftusLink>
+            <LoftusLink class="mx-3 laptop:mx-6 font-light hover:text-primary hover:no-underline" to="/menu-5">Menu Item 5</LoftusLink>
           </div>
         </nav>
       </div>
       <div class="flex items-center ml-auto">
-        <nuxt-link to="/search" class="text-xl text-primary hover:text-primary-dark transition-all duration-300">
+        <LoftusLink to="/search" class="text-xl text-primary hover:text-primary-dark">
           <i class="fas fa-search" />
-        </nuxt-link>
-        <nuxt-link to="/account" class="text-xl px-4 text-primary hover:text-primary-dark transition-all duration-300">
+        </LoftusLink>
+        <LoftusLink to="/account" class="text-xl px-4 text-primary hover:text-primary-dark">
           <i class="fas fa-user" />
-        </nuxt-link>
+        </LoftusLink>
         <LoftusButtonLink to="/cart" icon="fas fa-shopping-basket" variant="primary" hover="outline" class="w-max bg-primary text-white hover:bg-transparent hover:text-primary hover:border-primary">
           <span class="cart-size">{{ cartSize }} items</span>
         </LoftusButtonLink>
