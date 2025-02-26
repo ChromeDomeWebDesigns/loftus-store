@@ -3,6 +3,7 @@
     <LandingHero />
     <LandingTopCategories />
     <LandingTrendingProducts />
+    <LandingShoppingIncentives />
   </article>
 </template>
 
