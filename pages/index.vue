@@ -4,6 +4,7 @@
     <LandingTopCategories />
     <LandingTrendingProducts />
     <LandingShoppingIncentives />
+    <LandingOurPicks />
   </article>
 </template>
 
