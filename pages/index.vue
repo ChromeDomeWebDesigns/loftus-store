@@ -6,6 +6,8 @@
     <LandingShoppingIncentives />
     <LandingOurPicks />
     <LandingCategoryCallouts />
+    <LandingTopRatedProducts />
+    <LandingTestimonials />
   </article>
 </template>
 

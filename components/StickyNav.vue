@@ -38,10 +38,8 @@
 <script setup>
   import { ref, computed } from 'vue'
 
-  // Reactive state
   const showNav = ref(false)
 
-  // Computed property
   const cartSize = computed(() => {
     // TODO: Hook up Cart Information
     return 0
