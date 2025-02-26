@@ -2,6 +2,7 @@
   <article>
     <LandingHero />
     <LandingTopCategories />
+    <LandingTrendingProducts />
   </article>
 </template>
 

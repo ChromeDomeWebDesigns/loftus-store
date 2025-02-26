@@ -1,6 +1,6 @@
 <template>
   <section class="my-12">
-    <h3 class="text-center text-xl font-extrabold tracking-tight leading-none tablet:text-3xl xl:text-5xl mb-8">Top Categories</h3>
+    <LoftusSubHeading class="mb-8">Top Categories</LoftusSubHeading>
     <div class="grid mx-4 tablet:mx-8 phone:grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 large-laptop:grid-cols-5 justify-items-center">
       <LandingCategoryItem v-for="(collection, index) in collections" :key="index" :class="collection.css" :title="collection.title" :image="collection.image" :link="collection.link" />
     </div>
