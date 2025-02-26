@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="to" class="link link-hover">
+  <nuxt-link :to="to" class="hover:underline transition-all duration-200">
     <slot />
   </nuxt-link>
 </template>

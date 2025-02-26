@@ -10,9 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@heroicons/vue": "^2.2.0",
     "@pinia/nuxt": "^0.10.1",
     "nuxt": "^3.15.4",
-    "daisyui": "^3",
     "vue": "latest",
     "vue-router": "latest"
   },

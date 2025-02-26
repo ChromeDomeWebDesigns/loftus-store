@@ -1,6 +1,6 @@
 <template>
-  <nuxt-link :to="to" class="btn">
-    <i v-if="icon" :class="icon" />
+  <nuxt-link :to="to" class="rounded-md p-3.5 text-sm font-semibold shadow-sm uppercase transition-all duration-200 border">
+    <i v-if="icon" :class="icon" class="pr-2" />
     <slot />
   </nuxt-link>
 </template>

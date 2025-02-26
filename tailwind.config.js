@@ -56,9 +56,6 @@ module.exports = {
       "{srcDir}/app/spa-loading-template.html"
     ]
   },
-  "plugins": [require("daisyui")],
-  "daisyui": {
-    "themes": ["light"]
-  }
+  "plugins": [],
 }
 
