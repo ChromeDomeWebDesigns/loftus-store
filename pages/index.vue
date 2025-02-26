@@ -8,6 +8,7 @@
     <LandingCategoryCallouts />
     <LandingTopRatedProducts />
     <LandingTestimonials />
+    <LandingBrands />
   </article>
 </template>
 
