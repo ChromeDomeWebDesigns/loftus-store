@@ -5,6 +5,7 @@
     <LandingTrendingProducts />
     <LandingShoppingIncentives />
     <LandingOurPicks />
+    <LandingCategoryCallouts />
   </article>
 </template>
 
