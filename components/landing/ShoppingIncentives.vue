@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-white">
-    <div class="rounded-2xl bg-gray-50 px-6 py-16 sm:p-16">
+  <section class="bg-white">
+    <div class="rounded-2xl bg-gray-50 px-6 py-8 tablet:py-16">
       <div class="mx-auto max-w-xl lg:max-w-none">
         <div class="text-center">
           <h2 class="text-2xl font-bold tracking-tight text-gray-900">We built our business on customer service</h2>
@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
