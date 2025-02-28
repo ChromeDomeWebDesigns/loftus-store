@@ -34,7 +34,6 @@ export default defineNuxtConfig({
     '@/assets/scss/app.scss'
   ],
 
-  plugins: ['~/plugins/pinia'],
   modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss'],
   compatibilityDate: '2025-02-23',
 })
