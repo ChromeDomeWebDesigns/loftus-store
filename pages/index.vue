@@ -17,5 +17,5 @@
 
   const CollectionsStore = useCollectionsStore()
 
-  await CollectionsStore.fetchCollectionById({ collectionId: '6732', inflate: true })
+  CollectionsStore.fetchCollectionById({ collectionId: '6732', inflate: true })
 </script>

@@ -1,6 +1,4 @@
 import { defineStore } from 'pinia'
-// import { http } from '@/lib/https'
-import { collections as mockCollections } from '@/lib/mock-data/collections'
 import { collectionFormatter } from '@/lib/formatters/collection'
 import { useItemsStore } from '@/store/items'
 
@@ -38,8 +36,7 @@ export const useCollectionsStore = defineStore('collections', {
       try {
         this.UPDATE_LOADING(true)
 
-        // const res = await http.get(`/api/collections/${collectionId}`)
-        const res = mockCollections[collectionId]
+        const res = await $fetch(`/api/collections/${collectionId}`)
         const collection = collectionFormatter(res)
         this.ADD_COLLECTION(collection)
 

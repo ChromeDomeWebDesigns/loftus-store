@@ -1,6 +1,4 @@
 import { defineStore } from 'pinia'
-// import { http } from '@/lib/https'
-import { items as mockItems } from '@/lib/mock-data/items'
 import { itemFormatter } from '@/lib/formatters/item'
 
 export const useItemsStore = defineStore('items', {
@@ -37,8 +35,7 @@ export const useItemsStore = defineStore('items', {
       try {
         this.UPDATE_LOADING(true)
 
-        // const res = await http.get(`/api/items/${itemId}`)
-        const res = mockItems[itemId]
+        const res = await $fetch(`/api/items/${itemId}`)
         this.ADD_ITEM(itemFormatter(res))
       } catch (e) {
         console.error(e.message)

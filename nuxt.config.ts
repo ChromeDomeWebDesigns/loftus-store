@@ -36,4 +36,14 @@ export default defineNuxtConfig({
 
   modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss'],
   compatibilityDate: '2025-02-23',
+
+  nitro: {
+    routeRules: {
+      '/api/**': {
+        proxy: {
+          to: 'https://www.loftus.com/api/**'
+        }
+      }
+    }
+  },
 })
