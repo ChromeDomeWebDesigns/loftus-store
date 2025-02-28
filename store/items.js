@@ -1,7 +1,9 @@
 import { defineStore } from 'pinia'
-import { http } from '@/lib/https'
+// import { http } from '@/lib/https'
+import { items as mockItems } from '@/lib/mock-data/items'
+import { itemFormatter } from '@/lib/formatters/item'
 
-export const useProductsStore = defineStore('products', {
+export const useItemsStore = defineStore('items', {
   state: () => ({
     items: [],
     loading: false
@@ -16,6 +18,15 @@ export const useProductsStore = defineStore('products', {
     UPDATE_LOADING(loading) {
       this.loading = loading
     },
+    ADD_ITEM(item) {
+      this.items.push(item)
+    },
+    LOAD_ITEMS(items) {
+      this.items = items
+    },
+    LOAD_MORE_ITEMS(items) {
+      this.items = this.items.concat(items)
+    },
 
     // Actions
    async fetchItemById(itemId) {
@@ -26,10 +37,9 @@ export const useProductsStore = defineStore('products', {
       try {
         this.UPDATE_LOADING(true)
 
-        const res = await http.get(`/items/${itemId}`)
-        // TODO: COORS
-        // TODO: Add to store
-        // TODO: Formatter
+        // const res = await http.get(`/api/items/${itemId}`)
+        const res = mockItems[itemId]
+        this.ADD_ITEM(itemFormatter(res))
       } catch (e) {
         console.error(e.message)
       } finally {
