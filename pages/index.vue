@@ -6,7 +6,7 @@
     <LandingShoppingIncentives />
     <LandingOurPicks :collection-id="DEMO_COLLECTION_ID" />
     <LandingCategoryCallouts />
-    <LandingTopRatedProducts />
+    <LandingTopRatedProducts :collection-id="DEMO_COLLECTION_ID" />
     <LandingTestimonials />
     <LandingBrands />
   </article>
