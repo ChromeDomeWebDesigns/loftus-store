@@ -20,6 +20,6 @@
       return []
     }
 
-    return collection.items.slice(0, 6)
+    return collection.items.slice(0, 8)
   })
 </script>
