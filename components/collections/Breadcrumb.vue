@@ -3,7 +3,7 @@
     <ol role="list" class="flex items-center space-x-4">
       <li>
         <div>
-          <LoftusLink href="#" class="text-gray-400 hover:text-primary">
+          <LoftusLink href="/" class="text-gray-400 hover:text-primary">
             <HomeIcon class="size-5 shrink-0" aria-hidden="true" />
             <span class="sr-only">Home</span>
           </LoftusLink>

@@ -1,6 +1,7 @@
 <template>
   <article class="px-4 laptop:px-8 desktop:px-12">
     <CollectionsBreadcrumb :pages="pages" />
+    <CollectionsFilterableProducts />
   </article>
 </template>
 
