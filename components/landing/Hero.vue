@@ -4,7 +4,7 @@
     <div class="mr-auto place-self-center tablet:col-span-7">
       <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none tablet:text-5xl xl:text-8xl">Balloons, Novelties, Magic, & More!</h1>
       <p class="max-w-2xl mb-6 font-light text-gray-500 tablet:mb-8 tablet:text-lg tablet:text-xl">With nearly a century of knowledge in balloons, novelties, magic, and more, we empower businesses worldwide to captivate customers and make memorable impacts.</p>
-      <LoftusButtonLink to="/all-products" class="bg-primary text-white hover:bg-transparent hover:text-primary hover:border-primary">
+      <LoftusButtonLink to="/collections/all-products" class="bg-primary text-white hover:bg-transparent hover:text-primary hover:border-primary">
         Shop Now
       </LoftusButtonLink>
     </div>

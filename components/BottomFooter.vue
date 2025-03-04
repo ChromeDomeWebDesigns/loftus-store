@@ -100,7 +100,7 @@
             <LoftusLink class="hover:text-gray-200" to="/news">News</LoftusLink>
           </li>
           <li class="my-2">
-            <LoftusLink class="hover:text-gray-200" to="/all-products">All Products</LoftusLink>
+            <LoftusLink class="hover:text-gray-200" to="/collections/all-products">All Products</LoftusLink>
           </li>
         </ul>
       </div>
