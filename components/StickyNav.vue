@@ -1,10 +1,10 @@
 <template>
   <section class="z-10 sticky top-0 bg-white">
     <div class="flex items-center px-4 tablet:px-8 py-2 border-b-2 border-primary">
-      <div class="block tablet:hidden z-11 mr-auto p-4 text-xl">
-        <button @click="showNav = !showNav">
+      <div class="block tablet:hidden z-11 mr-auto p-4 text-2xl">
+        <LoftusButton @clicked="showNav = !showNav">
           <i class="fas fa-bars" />
-        </button>
+        </LoftusButton>
       </div>
       <LoftusLink to="/">
         <img src="/images/Logo.png" width="75px">

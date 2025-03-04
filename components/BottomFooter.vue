@@ -36,11 +36,11 @@
             <span>sales@loftus.com</span>
           </li>
           <li class="flex items-center mt-4">
-            <a class="rounded-full px-2 py-px mr-2 text-lg align-middle text-primary bg-white hover:bg-primary-dark hover:text-white transition-all duration-300" href="https://www.facebook.com/LoftusInternational" rel="noreferrer" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true" /></a>
-            <a class="rounded-full px-2 py-0.5 mr-2 text-lg align-middle text-primary bg-white hover:bg-primary-dark hover:text-white transition-all duration-300" href="https://www.instagram.com/loftusinternational" rel="noreferrer" target="_blank" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true" /></a>
-            <a class="rounded-full px-2 py-0.5 mr-2 text-lg align-middle text-primary bg-white hover:bg-primary-dark hover:text-white transition-all duration-300" href="https://x.com/loftusintl" rel="noreferrer" target="_blank" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true" /></a>
-            <a class="rounded-full px-2 py-0.5 mr-2 text-lg align-middle text-primary bg-white hover:bg-primary-dark hover:text-white transition-all duration-300" href="https://www.pinterest.com/loftusinternational" rel="noreferrer" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true" /></a>
-            <a class="rounded-full px-2 py-0.5 text-lg align-middle text-primary bg-white hover:bg-primary-dark hover:text-white transition-all duration-300" href="https://www.youtube.com/user/LoftusInternational" rel="noreferrer" target="_blank" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true" /></a>
+            <LoftusLink class="rounded-full px-2 py-px mr-2 text-lg align-middle text-primary bg-white hover:bg-primary-dark hover:text-white hover:no-underline" href="https://www.facebook.com/LoftusInternational" rel="noreferrer" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true" /></LoftusLink>
+            <LoftusLink class="rounded-full px-2 py-0.5 mr-2 text-lg align-middle text-primary bg-white hover:bg-primary-dark hover:text-white hover:no-underline" href="https://www.instagram.com/loftusinternational" rel="noreferrer" target="_blank" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true" /></LoftusLink>
+            <LoftusLink class="rounded-full px-2 py-0.5 mr-2 text-lg align-middle text-primary bg-white hover:bg-primary-dark hover:text-white hover:no-underline" href="https://x.com/loftusintl" rel="noreferrer" target="_blank" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true" /></LoftusLink>
+            <LoftusLink class="rounded-full px-2 py-0.5 mr-2 text-lg align-middle text-primary bg-white hover:bg-primary-dark hover:text-white hover:no-underline" href="https://www.pinterest.com/loftusinternational" rel="noreferrer" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true" /></LoftusLink>
+            <LoftusLink class="rounded-full px-2 py-0.5 text-lg align-middle text-primary bg-white hover:bg-primary-dark hover:text-white hover:no-underline" href="https://www.youtube.com/user/LoftusInternational" rel="noreferrer" target="_blank" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true" /></LoftusLink>
           </li>
         </ul>
       </div>
@@ -111,7 +111,7 @@
     </div>
 
     <div class="pt-0.5">
-      <span class="nowrap">Powered by <a href="https://chromedomewebdesigns.com" rel="noreferrer" target="_blank">Chrome Dome Web Designs</a></span>
+      <span class="nowrap">Powered by <LoftusLink href="https://chromedomewebdesigns.com" rel="noreferrer" target="_blank">Chrome Dome Web Designs</LoftusLink></span>
     </div>
 
     <div class="flex items-center pb-2 pt-1">

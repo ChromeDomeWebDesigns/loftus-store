@@ -1,5 +1,5 @@
 <template>
-  <button :to="to" class="flex items-center w-max rounded-md p-3.5 text-sm font-semibold uppercase transition-colors duration-200" @click="$emit('click')">
+  <button :to="to" class="flex items-center w-max rounded-md p-3.5 text-sm font-semibold uppercase transition-colors duration-200" @click="$emit('clicked')">
     <i v-if="icon" :class="icon" class="pr-2" />
     <slot />
   </button>

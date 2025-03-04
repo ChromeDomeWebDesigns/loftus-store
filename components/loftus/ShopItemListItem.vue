@@ -6,10 +6,10 @@
       <div class="flex flex-1 flex-col space-y-2 p-4">
         <p class="text-sm font-thin text-gray-500">{{ item.collection }}</p>
         <p class="font-medium text-gray-900 truncate">
-          <a :href="item.href">
+          <LoftusLink :href="item.href" class="hover:text-primary hover:no-underline">
             <span aria-hidden="true" class="absolute inset-0" />
             {{ item.title }}
-          </a>
+          </LoftusLink>
         </p>
         <div class="flex items-center">
           <p class="text-lg font-bold text-gray-900 flex-1 mr-2">{{ item.price }}</p>

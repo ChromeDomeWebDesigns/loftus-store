@@ -9,10 +9,10 @@
         <DialogPanel class="relative ml-auto flex size-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl">
           <div class="flex items-center justify-between px-4">
             <h2 class="text-lg font-medium text-gray-900">Filters</h2>
-            <button type="button" class="-mr-2 flex size-10 items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:text-primary" @click="$emit('close')">
+            <LoftusButton type="button" class="-mr-2 flex size-10 items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:text-primary" @click="$emit('close')">
               <span class="sr-only">Close menu</span>
               <XMarkIcon class="size-6" aria-hidden="true" />
-            </button>
+            </LoftusButton>
           </div>
 
           <!-- Filters -->
