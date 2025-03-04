@@ -41,7 +41,7 @@ export default defineNuxtConfig({
     routeRules: {
       '/api/**': {
         proxy: {
-          to: 'https://www.loftus.com/api/**'
+          to: 'https://alpha.loftus.com/api/**'
         }
       }
     }
