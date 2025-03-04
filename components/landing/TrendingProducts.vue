@@ -2,7 +2,7 @@
   <section class="my-12">
     <LoftusSubHeading class="mb-8">Trending Products</LoftusSubHeading>
     <LandingTrendingProductsPillNav class="mb-8" :tabs="tabs" :selected="selectedTab" @change="tabChange" />
-    <LoftusShopItemList :items="trendingProducts" />
+    <LoftusShopItemList :items="trendingProducts" :mobile-max="6" />
   </section>
 </template>
 

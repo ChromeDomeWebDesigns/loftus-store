@@ -6,17 +6,19 @@
 
 <script setup>
   import { computed } from 'vue'
-  const { items } = defineProps(['items'])
+  const { items, mobileMax = 20 } = defineProps(['items', 'mobileMax'])
 
   const formattedItems = computed(() => {
     if (!items) {
       return []
     }
 
+
+
     return items.map((item, index) => {
       return {
         id: item,
-        css: index >= 5 ? 'hidden desktop:block' : ''
+        css: index >= mobileMax ? 'hidden desktop:block' : ''
       }
     })
   })
