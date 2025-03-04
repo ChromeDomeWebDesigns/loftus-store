@@ -2,7 +2,7 @@
   <div>
     <!-- Mobile filter dialog -->
     <TransitionRoot as="template" :show="mobileFiltersOpen">
-      <CollectionsMobileFiltersFlyout @close="mobileFiltersOpen = false" :filters="filters" :categories="categories" />
+      <CollectionsMobileFiltersFlyout @close="mobileFiltersOpen = false" :filters="filters" :collections="collections" />
     </TransitionRoot>
 
     <main class="mx-auto">
@@ -14,7 +14,7 @@
         <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
           <!-- Filters -->
           <form class="hidden lg:block">
-            <CollectionsSearchFacets :filters="filters" :categories="categories" />
+            <CollectionsSearchFacets :filters="filters" :collections="collections" />
           </form>
 
           <!-- Product grid -->
@@ -52,13 +52,35 @@ const sortOptions = [
   { name: 'Price: Low to High', href: '#', current: false },
   { name: 'Price: High to Low', href: '#', current: false },
 ]
-const categories = [
-  { name: 'Totes', href: '#' },
-  { name: 'Backpacks', href: '#' },
-  { name: 'Travel Bags', href: '#' },
-  { name: 'Hip Bags', href: '#' },
-  { name: 'Laptop Sleeves', href: '#' },
+
+const collections = [
+  {
+    title: 'All Products',
+    link: '/collections/all-products',
+    active: true
+  },
+  {
+    title: 'Balloons',
+    link: '/collections/balloons',
+  },
+  {
+    title: 'Novelties',
+    link: '/collections/novelties',
+  },
+  {
+    title: 'Magic',
+    link: '/collections/magic',
+  },
+  {
+    title: 'Costumes',
+    link: '/collections/costumes',
+  },
+  {
+    title: 'Party',
+    link: '/collections/party',
+  }
 ]
+
 const filters = [
   {
     id: 'color',
@@ -73,26 +95,25 @@ const filters = [
     ],
   },
   {
-    id: 'category',
-    name: 'Category',
+    id: 'brand',
+    name: 'Brand',
     options: [
-      { value: 'new-arrivals', label: 'New Arrivals', checked: false },
-      { value: 'sale', label: 'Sale', checked: false },
-      { value: 'travel', label: 'Travel', checked: true },
-      { value: 'organization', label: 'Organization', checked: false },
-      { value: 'accessories', label: 'Accessories', checked: false },
+      { value: 'anagram', label: 'Anagram', checked: false },
+      { value: 'eddy', label: 'Eddy', checked: false },
+      { value: 'empire', label: 'Empire', checked: true },
+      { value: 'ja-ru', label: 'Ja-Ru', checked: false },
+      { value: 'la-fete', label: 'La Fete', checked: false },
+      { value: 'mehron', label: 'Mehron', checked: false },
+      { value: 'mustaches', label: 'Mustaches', checked: false },
+      { value: 'Tuftex', label: 'Tuftex', checked: false },
     ],
   },
   {
     id: 'size',
     name: 'Size',
     options: [
-      { value: '2l', label: '2L', checked: false },
-      { value: '6l', label: '6L', checked: false },
-      { value: '12l', label: '12L', checked: false },
-      { value: '18l', label: '18L', checked: false },
-      { value: '20l', label: '20L', checked: false },
-      { value: '40l', label: '40L', checked: true },
+      { value: 'inch_17', label: '17"', checked: false },
+      { value: 'inch_30', label: '30"', checked: false },
     ],
   },
 ]

@@ -26,7 +26,7 @@
     {
       title: 'Magic',
       image: '/images/collections/Magic.png',
-      link: '/collections/Magic',
+      link: '/collections/magic',
       css: 'hidden tablet:block'
     },
     {

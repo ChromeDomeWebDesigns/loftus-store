@@ -17,7 +17,7 @@
 
           <!-- Filters -->
           <form class="p-4 border-t border-gray-200">
-            <CollectionsSearchFacets :categories="categories" :filters="filters" />
+            <CollectionsSearchFacets :collections="collections" :filters="filters" />
           </form>
         </DialogPanel>
       </TransitionChild>
@@ -33,5 +33,5 @@ import {
 } from '@headlessui/vue'
 import { XMarkIcon } from '@heroicons/vue/24/outline'
 
-const { categories, filters } = defineProps(['categories', 'filters'])
+const { collections, filters } = defineProps(['collections', 'filters'])
 </script>
