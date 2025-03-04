@@ -2,7 +2,7 @@
   <div>
     <!-- Mobile filter dialog -->
     <TransitionRoot as="template" :show="mobileFiltersOpen">
-      <CollectionsMobileFiltersFlyout @close="mobileFiltersOpen = false" :filters="filters" :sub-categories="subCategories" />
+      <CollectionsMobileFiltersFlyout @close="mobileFiltersOpen = false" :filters="filters" :categories="categories" />
     </TransitionRoot>
 
     <main class="mx-auto">
@@ -13,7 +13,9 @@
 
         <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
           <!-- Filters -->
-          <CollectionsSideFilterBar :filters="filters" :sub-categories="subCategories" />
+          <form class="hidden lg:block">
+            <CollectionsSearchFacets :filters="filters" :categories="categories" />
+          </form>
 
           <!-- Product grid -->
           <div class="lg:col-span-3">
@@ -50,7 +52,7 @@ const sortOptions = [
   { name: 'Price: Low to High', href: '#', current: false },
   { name: 'Price: High to Low', href: '#', current: false },
 ]
-const subCategories = [
+const categories = [
   { name: 'Totes', href: '#' },
   { name: 'Backpacks', href: '#' },
   { name: 'Travel Bags', href: '#' },

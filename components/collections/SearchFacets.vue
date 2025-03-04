@@ -1,8 +1,8 @@
 <template>
-  <form class="hidden lg:block">
+  <div>
     <h3 class="sr-only">Categories</h3>
     <ul role="list" class="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
-      <li v-for="category in subCategories" :key="category.name">
+      <li v-for="category in categories" :key="category.name">
         <LoftusLink :href="category.href" class="hover:text-primary hover:no-underline">{{ category.name }}</LoftusLink>
       </li>
     </ul>
@@ -34,7 +34,7 @@
         </div>
       </DisclosurePanel>
     </Disclosure>
-  </form>
+  </div>
 </template>
 
 <script setup>
@@ -45,5 +45,5 @@ import {
 } from '@headlessui/vue'
 import { MinusIcon, PlusIcon } from '@heroicons/vue/20/solid'
 
-const { subCategories, filters } = defineProps(['subCategories', 'filters'])
+const { categories, filters } = defineProps(['categories', 'filters'])
 </script>
