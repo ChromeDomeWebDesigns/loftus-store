@@ -18,8 +18,8 @@
           </form>
 
           <!-- Product grid -->
-          <div class="lg:col-span-3">
-            <!-- Your content -->
+          <div class="grid gap-2 laptop:gap-4 grid-cols-2 tablet:grid-cols-3 lg:col-span-3 ">
+            <LoftusShopItemListItem v-for="item in items" :key="item" :item-id="item" />
           </div>
         </div>
       </section>
@@ -30,20 +30,10 @@
 <script setup>
 import { ref } from 'vue'
 import {
-  Dialog,
-  DialogPanel,
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-  TransitionChild,
   TransitionRoot,
 } from '@headlessui/vue'
-import { XMarkIcon } from '@heroicons/vue/24/outline'
-import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/vue/20/solid'
+
+const { items } = defineProps(['items'])
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },

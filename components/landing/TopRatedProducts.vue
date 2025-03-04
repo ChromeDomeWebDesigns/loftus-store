@@ -1,7 +1,7 @@
 <template>
   <section class="my-12">
     <LoftusSubHeading class="mb-8">Top Rated</LoftusSubHeading>
-    <LoftusShopItemList :items="topRated" :mobile-max="4" />
+    <LandingProductShowcase :items="topRated" :mobile-max="4" />
   </section>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <section class="py-12 bg-primary text-white">
     <LoftusSubHeading class="mb-8">Our Picks</LoftusSubHeading>
-    <LoftusShopItemList :items="ourPicks" :mobile-max="4" />
+    <LandingProductShowcase :items="ourPicks" :mobile-max="4" />
   </section>
 </template>
 

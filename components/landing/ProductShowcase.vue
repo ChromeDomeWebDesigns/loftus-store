@@ -13,8 +13,6 @@
       return []
     }
 
-
-
     return items.map((item, index) => {
       return {
         id: item,

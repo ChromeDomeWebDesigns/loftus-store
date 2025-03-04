@@ -39,7 +39,7 @@
           <ChevronDownIcon class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4" aria-hidden="true" />
         </div>
       </div>
-      <LoftusButton icon="fas fa-cart-plus" class="bg-primary text-white hover:bg-transparent hover:text-primary hover:border-primary"><span class="hidden phablet:block">Add to Cart</span></LoftusButton>
+      <LoftusButton icon="fas fa-cart-plus" class="bg-primary text-xxs text-white hover:bg-transparent hover:text-primary hover:border-primary"><span class="hidden phablet:block">Add to Cart</span></LoftusButton>
     </div>
   </div>
 </template>
