@@ -1,29 +1,27 @@
 <template>
-  <div class="bg-white">
-    <div>
-      <!-- Mobile filter dialog -->
-      <TransitionRoot as="template" :show="mobileFiltersOpen">
-        <CollectionsMobileFiltersFlyout @close="mobileFiltersOpen = false" :filters="filters" :sub-categories="subCategories" />
-      </TransitionRoot>
+  <div>
+    <!-- Mobile filter dialog -->
+    <TransitionRoot as="template" :show="mobileFiltersOpen">
+      <CollectionsMobileFiltersFlyout @close="mobileFiltersOpen = false" :filters="filters" :sub-categories="subCategories" />
+    </TransitionRoot>
 
-      <main class="mx-auto">
-        <CollectionsTopFilterBar title="All Products" :sort-options="sortOptions" @openMobileFlyout="mobileFiltersOpen = true" />
+    <main class="mx-auto">
+      <CollectionsTopFilterBar title="All Products" :sort-options="sortOptions" @openMobileFlyout="mobileFiltersOpen = true" />
 
-        <section aria-labelledby="products-heading" class="pb-24 pt-6">
-          <h2 id="products-heading" class="sr-only">Products</h2>
+      <section aria-labelledby="products-heading" class="pb-24 pt-6">
+        <h2 id="products-heading" class="sr-only">Products</h2>
 
-          <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-            <!-- Filters -->
-            <CollectionsSideFilterBar :filters="filters" :sub-categories="subCategories" />
+        <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
+          <!-- Filters -->
+          <CollectionsSideFilterBar :filters="filters" :sub-categories="subCategories" />
 
-            <!-- Product grid -->
-            <div class="lg:col-span-3">
-              <!-- Your content -->
-            </div>
+          <!-- Product grid -->
+          <div class="lg:col-span-3">
+            <!-- Your content -->
           </div>
-        </section>
-      </main>
-    </div>
+        </div>
+      </section>
+    </main>
   </div>
 </template>
 
