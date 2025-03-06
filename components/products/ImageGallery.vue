@@ -14,7 +14,7 @@
 
     <TabPanels>
       <TabPanel v-for="(image, index) in images" :key="index" class="flex justify-center">
-        <img :src="image" class="aspect-square max-h-[60vh] w-auto object-cover sm:rounded-lg" />
+        <img :src="image" class="aspect-square max-h-[40vh] lg:max-h-[60vh] w-auto object-cover sm:rounded-lg" />
       </TabPanel>
     </TabPanels>
   </TabGroup>

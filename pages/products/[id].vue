@@ -4,19 +4,24 @@
     <template v-if="product">
       <ProductsOverview :product="product" />
       <ProductsReviews />
+      <ProductsAdditionalProducts :collection-id="DEMO_COLLECTION_ID" />
     </template>
   </article>
 </template>
 
 <script setup>
-  import { computed } from 'vue'
+  import { ref, computed } from 'vue'
+  import { useCollectionsStore } from '~/store/collections'
   import { useItemsStore } from '~/store/items'
 
   const route = useRoute()
+  const DEMO_COLLECTION_ID = ref('6732')
   const itemId = route.params.id
 
+  const CollectionsStore = useCollectionsStore()
   const ItemsStore = useItemsStore()
 
+  CollectionsStore.fetchCollectionById({ collectionId: DEMO_COLLECTION_ID.value, inflate: true })
   ItemsStore.fetchItemById({ itemId })
 
   const product = computed(() => {
