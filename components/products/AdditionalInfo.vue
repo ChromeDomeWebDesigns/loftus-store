@@ -32,6 +32,6 @@ import { MinusIcon, PlusIcon } from '@heroicons/vue/24/outline'
 const { product } = defineProps(['product'])
 
 function listItems(items) {
-  return items.filter(item => item && item.value !== null)
+  return items?.filter(item => item && item.value !== null)
 }
 </script>
