@@ -25,7 +25,7 @@
       <div class="flex items-center w-max bg-gray-100 rounded px-3 py-2 mr-2 text-sm">
         <label class="mr-1 hidden phone:block">Qty</label>
         <div class="grid grid-cols-1">
-          <select :name="`quantity-${item.id}`" :aria-label="`Quantity, ${item.title}`" class="col-start-1 row-start-1 appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+          <select :name="`quantity-${item.id}`" :aria-label="`Quantity, ${item.title}`" class="col-start-1 row-start-1 appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
