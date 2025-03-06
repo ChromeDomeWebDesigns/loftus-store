@@ -53,7 +53,7 @@ export const useCollectionsStore = defineStore('collections', {
       const ItemsStore = useItemsStore()
 
       items.forEach(itemId => {
-        ItemsStore.fetchItemById(itemId)
+        ItemsStore.fetchItemById({ itemId })
       })
     }
   },

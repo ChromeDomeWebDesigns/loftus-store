@@ -14,7 +14,7 @@
         <p class="text-sm/6 text-gray-700 mb-4 pl-2">{{ detail.description }}</p>
 
         <ul role="list" class="list-disc space-y-1 pl-5 text-sm/6 text-gray-700 marker:text-gray-300">
-          <li v-for="item in detail.items" :key="item" class="pl-2">{{ item }}</li>
+          <li v-for="item in listItems(detail.items)" :key="item" class="pl-2">{{ item }}</li>
         </ul>
       </DisclosurePanel>
     </Disclosure>
@@ -30,4 +30,8 @@ import {
 import { MinusIcon, PlusIcon } from '@heroicons/vue/24/outline'
 
 const { product } = defineProps(['product'])
+
+function listItems(items) {
+  return items.filter(item => item && item.value !== null)
+}
 </script>

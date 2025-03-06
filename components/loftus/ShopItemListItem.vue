@@ -62,7 +62,7 @@
     return {
       ...item,
       href: `/products/${itemId}`,
-      rating: Number((Math.random() * (5 - 3.8) + 3.8).toFixed(1)), // TODO: Hook this up, rating system not currently in place
+      rating: Number((Math.floor(Math.random() * 5) + 1).toFixed(2)), // TODO: Hook this up, rating system not currently in place
       collection: 'Balloons', // TODO: Hook this up, collection names are too long right now
       price: '$XX.XX', // TODO: Hook this up, need to understand how this is calculated
     }

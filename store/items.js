@@ -27,7 +27,7 @@ export const useItemsStore = defineStore('items', {
     },
 
     // Actions
-   async fetchItemById(itemId) {
+   async fetchItemById({ itemId }) {
       if (this.getItemById(itemId)) {
         return
       }

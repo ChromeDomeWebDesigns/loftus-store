@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ product.name }}</h1>
+    <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ product.title }}</h1>
     <p class="mt-3 text-3xl tracking-tight text-gray-900">{{ product.price }}</p>
 
     <ProductsRating :rating="product.rating" />
