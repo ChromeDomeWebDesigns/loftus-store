@@ -4,7 +4,6 @@ import { itemFormatter } from '@/lib/formatters/item'
 export const useItemsStore = defineStore('items', {
   state: () => ({
     items: [],
-    loading: false
   }),
   getters: {
     getItemById: (state) => {
@@ -13,7 +12,15 @@ export const useItemsStore = defineStore('items', {
   },
   actions: {
     // Mutations
-    UPDATE_LOADING(loading) {
+    UPDATE_LOADING({ itemId, loading }) {
+      const record = this.items.find(({ id }) => id === itemId)
+
+      if (record) {
+        record.loading = loading
+      } else {
+        this.items.push({ itemId, loading })
+      }
+
       this.loading = loading
     },
     ADD_ITEM(item) {
@@ -33,14 +40,14 @@ export const useItemsStore = defineStore('items', {
       }
 
       try {
-        this.UPDATE_LOADING(true)
+        this.UPDATE_LOADING({ itemId, loading: true })
 
         const res = await $fetch(`/api/items/${itemId}`)
         this.ADD_ITEM(itemFormatter(res))
       } catch (e) {
         console.error(e.message)
       } finally {
-        this.UPDATE_LOADING(false)
+        this.UPDATE_LOADING({ itemId, loading: false })
       }
     },
   },

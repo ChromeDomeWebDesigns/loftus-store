@@ -1,7 +1,9 @@
 <template>
   <article class="px-4 laptop:px-8 desktop:px-12">
     <LoftusBreadcrumb :pages="pages" />
-    <template v-if="product">
+
+    <LoftusLoadingSpinner v-if="itemLoading" class="mt-8" />
+    <template v-else>
       <ProductsOverview :product="product" />
       <ProductsReviews />
       <ProductsAdditionalProducts :collection-id="DEMO_COLLECTION_ID" />
@@ -24,15 +26,21 @@
   CollectionsStore.fetchCollectionById({ collectionId: DEMO_COLLECTION_ID.value, inflate: true })
   ItemsStore.fetchItemById({ itemId })
 
-  const product = computed(() => {
-    const item = ItemsStore.getItemById(itemId)
+  const item = computed(() => {
+    return ItemsStore.getItemById(itemId)
+  })
 
-    if (!item) {
+  const itemLoading = computed(() => {
+    return !item?.value || item?.value.loading
+  })
+
+  const product = computed(() => {
+    if (itemLoading.value) {
       return null
     }
 
     return {
-      ...item,
+      ...item.value,
         details: [
         {
           name: 'Specifications',
