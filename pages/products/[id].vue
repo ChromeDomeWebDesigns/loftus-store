@@ -45,8 +45,8 @@
         {
           name: 'Specifications',
           items: [
-            `SKU: ${item.sku}`,
-            `UPC: ${item.upc}`,
+            `SKU: ${item.value.sku}`,
+            `UPC: ${item.value.upc}`,
             productItemDimensions,
             productItemWeight,
             productPackDimensions,
