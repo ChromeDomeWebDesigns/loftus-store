@@ -15,6 +15,7 @@
   import { ref, computed } from 'vue'
   import { useCollectionsStore } from '~/store/collections'
   import { useItemsStore } from '~/store/items'
+  import { prettyNumber } from '~/lib/utils'
 
   const route = useRoute()
   const DEMO_COLLECTION_ID = ref('6732')
@@ -47,15 +48,19 @@
           items: [
             `SKU: ${item.value.sku}`,
             `UPC: ${item.value.upc}`,
-            productItemDimensions,
-            productItemWeight,
-            productPackDimensions,
-            productPackWeight,
-            productPackQuantity,
-            productCaseDimensions,
-            productCaseWeight,
-            productCaseQuantity,
+            productItemDimensions.value,
+            productItemWeight.value,
+            productPackDimensions.value,
+            productPackWeight.value,
+            productPackQuantity.value,
+            productCaseDimensions.value,
+            productCaseWeight.value,
+            productCaseQuantity.value,
           ],
+        },
+        {
+          name: 'Bulk Discounts',
+          items: bulkDiscounts.value
         },
         {
           name: 'Shipping',
@@ -132,11 +137,40 @@
     return `Case Weight: ${product.value['case-weight']} lbs`
   })
 
-    const productCaseQuantity = computed(() => {
+  const productCaseQuantity = computed(() => {
     if (!product.value?.['case-quantity']) {
       return null
     }
 
     return `Case Count: ${product.value['case-quantity']}`
+  })
+
+  const bulkDiscounts = computed(() => {
+    if (!product.value?.quantityDiscounts) {
+      return null
+    }
+
+    const price = product.value.price.sale || product.value.price.value
+    const discounts = []
+
+    const quantities = Object.keys(product.value.quantityDiscounts)
+
+    quantities.forEach((quantity, index) => {
+      const discountPercentage = product.value.quantityDiscounts[quantity]
+      const value = price - (price * discountPercentage)
+      let discountString = null
+
+      if (index + 1 === quantities.length) {
+        discountString = `${quantity}+: $${prettyNumber(value)} (${discountPercentage * 100}% discount)`
+      } else {
+        const nextQuantity = quantities[index + 1] - 1
+        discountString = `${quantity} - ${nextQuantity}: $${prettyNumber(value)} (${discountPercentage * 100}% discount)`
+      }
+
+      discounts.push(discountString)
+    })
+
+    console.log(discounts)
+    return discounts
   })
 </script>
