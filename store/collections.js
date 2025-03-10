@@ -46,23 +46,24 @@ export const useCollectionsStore = defineStore('collections', {
 
         const res = await $fetch(`/api/collections/${collectionId}`)
         const collection = collectionFormatter(res)
-        this.ADD_COLLECTION(collection)
 
         if (inflate) {
           await this.inflateCollectionItems(collection)
         }
+
+        this.ADD_COLLECTION(collection)
       } catch (e) {
         console.error(e.message)
       } finally {
         this.UPDATE_LOADING({ collectionId, loading: false })
       }
     },
-    inflateCollectionItems({ items }) {
+    async inflateCollectionItems({ items }) {
       const ItemsStore = useItemsStore()
 
-      items.forEach(itemId => {
-        ItemsStore.fetchItemById({ itemId })
-      })
+      const promises = items.map((itemId => ItemsStore.fetchItemById({ itemId })))
+
+      await Promise.all(promises)
     }
   },
 })
