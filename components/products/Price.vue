@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="flex items-center tracking-tight">
+    <div class="flex items-center tracking-tight flex-wrap gap-x-2">
       <p class="text-gray-900" :class="price.sale ? 'line-through': ''">${{ calculatedPrice }}</p>
-      <p v-if="price.sale" class="ml-2 text-red-600">${{ calculatedSale }}</p>
-      <p v-if="pricePerUnit" class="text-xxxs text-gray-500 ml-2 mt-1">(${{ pricePerUnit }} / unit)</p>
+      <p v-if="price.sale" class="text-red-600">${{ calculatedSale }}</p>
+      <p v-if="pricePerUnit" class="font-normal text-xs laptop:text-xxxs text-gray-500">(${{ pricePerUnit }} / unit)</p>
     </div>
     <div v-if="bulkDiscount.value" class="mt-2 text-xxxs flex items-center rounded w-max p-2 bg-primary/10">
       <i class="fas fa-bell mr-2 text-primary" />

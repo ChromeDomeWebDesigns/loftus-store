@@ -15,7 +15,7 @@
             </LoftusLink>
           </p>
           <div class="flex items-center">
-            <p class="text-lg font-bold text-gray-900 flex-1 mr-2">{{ product.price }}</p>
+            <ProductsPrice :price="product.price" :quantity-discounts="product.quantityDiscounts" :quantity="quantity" :case-quantity="product['case-quantity']" class="text-lg font-bold text-gray-900 flex-1 mr-2" />
             <div class="text-sm bg-primary text-white rounded p-1">
               <span class="pr-1">{{ product.rating }}</span>
               <i class="fas fa-star text-yellow-500" />
@@ -28,7 +28,7 @@
         <div class="flex items-center w-max bg-gray-100 rounded px-3 py-2 mr-2 text-sm">
           <label class="mr-1 hidden phone:block">Qty</label>
           <div class="grid grid-cols-1">
-            <select :name="`quantity-${product.id}`" :aria-label="`Quantity, ${product.title}`" class="col-start-1 row-start-1 appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6">
+            <select v-model="quantity" class="col-start-1 row-start-1 appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -49,7 +49,7 @@
 </template>
 
 <script setup>
-  import { computed } from 'vue'
+  import { ref, computed } from 'vue'
   import { ChevronDownIcon } from '@heroicons/vue/16/solid'
   import { useItemsStore } from '~/store/items'
 
@@ -82,4 +82,6 @@
 
     return product.value.images[0]
   })
+
+  const quantity = ref(1)
 </script>
