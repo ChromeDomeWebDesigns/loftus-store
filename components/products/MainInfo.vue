@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ product.title }}</h1>
-    <p class="mt-3 text-3xl tracking-tight text-gray-900">{{ product.price }}</p>
+
+    <ProductsPrice :price="product.price" :quantity-discounts="product.quantityDiscounts" :quantity="quantity" class="mt-3 text-3xl" />
 
     <ProductsRating :rating="product.rating" />
 
@@ -13,5 +14,5 @@
 </template>
 
 <script setup>
-const { product } = defineProps(['product'])
+const { product, quantity } = defineProps(['product', 'quantity'])
 </script>
