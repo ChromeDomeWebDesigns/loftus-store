@@ -5,7 +5,7 @@
       <TabList class="grid grid-cols-4 gap-6">
         <Tab v-for="(image, index) in images" :key="index" class="relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-primary/50 focus:ring-offset-4" v-slot="{ selected }">
           <span class="absolute inset-0 overflow-hidden rounded-md">
-            <img :src="image" class="size-full object-cover" />
+            <LoftusImage :src="image" class="size-full object-cover" />
           </span>
           <span :class="[selected ? 'ring-primary' : 'ring-transparent', 'pointer-events-none absolute inset-0 rounded-md ring-2 ring-offset-2']" aria-hidden="true" />
         </Tab>
@@ -14,7 +14,7 @@
 
     <TabPanels>
       <TabPanel v-for="(image, index) in images" :key="index" class="flex justify-center">
-        <img :src="image" class="aspect-square max-h-[40vh] lg:max-h-[60vh] w-auto object-cover sm:rounded-lg" />
+        <LoftusImage :src="image" class="aspect-square max-h-[40vh] lg:max-h-[60vh] w-auto object-cover sm:rounded-lg" />
       </TabPanel>
     </TabPanels>
   </TabGroup>

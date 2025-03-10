@@ -7,7 +7,7 @@
         </LoftusButton>
       </div>
       <LoftusLink to="/">
-        <img src="/images/Logo.png" width="75px">
+        <LoftusImage src="/images/Logo.png" width="75px" />
       </LoftusLink>
       <div class="nav-collapse w-full" :class="{ 'show': showNav }">
         <nav class="flex items-center tablet:flex-row flex-col p-4">

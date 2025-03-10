@@ -9,7 +9,7 @@
           <div v-for="incentive in incentives" :key="incentive.name" class="text-center sm:flex sm:text-left lg:block lg:text-center">
             <div class="sm:shrink-0">
               <div class="flow-root">
-                <img class="mx-auto size-16" :src="incentive.imageSrc" alt="" />
+                <LoftusImage class="mx-auto size-16" :src="incentive.imageSrc" alt="" />
               </div>
             </div>
             <div class="mt-3 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-6">

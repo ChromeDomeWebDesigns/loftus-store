@@ -8,7 +8,7 @@
           <p>“{{ activeTestimonial.quote }}”</p>
         </blockquote>
         <figcaption class="mt-10">
-          <img class="mx-auto size-10 rounded-full" :src="activeTestimonial.avatarImage" alt="Avatar image" />
+          <LoftusImage class="mx-auto size-10 rounded-full" :src="activeTestimonial.avatarImage" alt="Avatar image" />
           <div class="mt-4 flex flex-col phablet:flex-row items-center justify-center space-x-3 text-base">
             <div class="font-semibold text-gray-900">{{ activeTestimonial.name }}</div>
             <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" class="fill-gray-900 hidden phablet:block">

@@ -9,7 +9,7 @@
       </LoftusButtonLink>
     </div>
     <div class="hidden tablet:mt-0 tablet:col-span-5 tablet:flex">
-      <img src="/images/Hero.png" alt="mockup">
+      <LoftusImage src="/images/Hero.png" alt="mockup" />
     </div>
   </div>
 </section>

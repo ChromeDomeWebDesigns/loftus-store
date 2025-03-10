@@ -1,7 +1,7 @@
 <template>
   <section class="grid phone:grid-cols-2 gap-y-8 gap-x-8 lg:space-y-0 mx-auto max-w-none my-12 px-8 tablet:px-12">
     <div v-for="callout in callouts" :key="callout.name" class="group relative">
-      <img :src="callout.imageSrc" :alt="callout.imageAlt" class="w-full rounded-lg bg-white object-contain group-hover:opacity-75 lg:aspect-[3/2]" />
+      <LoftusImage :src="callout.imageSrc" :alt="callout.imageAlt" class="w-full rounded-lg bg-white object-contain group-hover:opacity-75 lg:aspect-[3/2]" />
       <LoftusLink :href="callout.href">
         <span class="absolute inset-0" />
       </LoftusLink>

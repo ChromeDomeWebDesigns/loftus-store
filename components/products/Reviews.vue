@@ -47,7 +47,7 @@
         <div class="-my-12 divide-y divide-gray-200">
           <div v-for="review in reviews.featured" :key="review.id" class="py-12">
             <div class="flex items-center">
-              <img :src="review.avatarSrc" :alt="`${review.author}.`" class="size-12 rounded-full" />
+              <LoftusImage :src="review.avatarSrc" :alt="`${review.author}.`" class="size-12 rounded-full" />
               <div class="ml-4">
                 <h4 class="text-sm font-bold text-gray-900">{{ review.author }}</h4>
                 <div class="mt-1 flex items-center">

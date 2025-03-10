@@ -2,7 +2,7 @@
   <div class="flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white pt-4">
     <div class="group relative flex flex-col">
       <LoftusButton class="!rounded-full bg-white text-black absolute top-[10px] right-[10px] z-[5] hover:bg-primary hover:text-white"><i class="fas fa-eye"/></LoftusButton>
-      <img :src="mainImage" :alt="item.title" class="aspect-[3/4] w-full bg-white object-contain group-hover:opacity-75 sm:aspect-auto sm:h-64" />
+      <LoftusImage :src="mainImage" :alt="item.title" class="aspect-[3/4] w-full bg-white object-contain group-hover:opacity-75 sm:aspect-auto sm:h-64" />
       <div class="flex flex-1 flex-col space-y-2 p-4">
         <p class="text-sm font-thin text-gray-500">{{ item.collection }}</p>
         <p class="font-medium text-gray-900 truncate">
