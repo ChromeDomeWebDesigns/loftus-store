@@ -1,7 +1,7 @@
 <template>
   <article class="px-4 laptop:px-8 desktop:px-12">
     <LoftusBreadcrumb :pages="pages" />
-    <CollectionsFilterableProducts :items="items" />
+    <CollectionsFilterableProducts :items="items" :loading="collectionLoading" />
   </article>
 </template>
 
@@ -19,13 +19,19 @@
 
   CollectionsStore.fetchCollectionById({ collectionId: DEMO_COLLECTION_ID, inflate: true })
 
-  const items = computed(() => {
-    const collection = CollectionsStore.getCollectionById(DEMO_COLLECTION_ID)
+  const collection = computed(() => {
+    return CollectionsStore.getCollectionById(DEMO_COLLECTION_ID)
+  })
 
-    if (!collection) {
+  const collectionLoading = computed(() => {
+    return !collection?.value || collection?.value.loading
+  })
+
+  const items = computed(() => {
+    if (collectionLoading.value) {
       return []
     }
 
-    return collection.items
+    return collection.value.items
   })
 </script>

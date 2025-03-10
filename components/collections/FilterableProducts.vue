@@ -18,7 +18,10 @@
           </form>
 
           <!-- Product grid -->
-          <div class="grid gap-2 laptop:gap-4 grid-cols-2 tablet:grid-cols-3 lg:col-span-3 ">
+          <div v-if="loading" class="lg:col-span-3">
+            <LoftusLoadingSpinner />
+          </div>
+          <div v-else class="grid gap-2 laptop:gap-4 grid-cols-2 tablet:grid-cols-3 lg:col-span-3">
             <LoftusShopItemListItem v-for="item in items" :key="item" :item-id="item" />
           </div>
         </div>
@@ -33,7 +36,7 @@ import {
   TransitionRoot,
 } from '@headlessui/vue'
 
-const { items } = defineProps(['items'])
+const { items, loading } = defineProps(['items', 'loading' ])
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
