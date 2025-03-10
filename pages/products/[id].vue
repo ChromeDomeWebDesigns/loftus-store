@@ -66,9 +66,6 @@
           description: 'We stand behind our products and accept returns for manufacturing defects; however, we are not a guaranteed sale wholesaler. To ensure you receive proper credit promptly, please follow these guidelines. Report any defects, shortages, or damages within 14 days of receiving your shipment. Provide at least seven photos—including the delivery label and all sides of the package—so we can process your claim quickly. Send these photos to becky@loftus.com. All returns must be pre-approved and assigned a return number; once you have that number, please return the merchandise to our warehouse within 10 days. Merchandise ordered in error will incur a 20% restocking fee. To avoid errors, have stock numbers and descriptions ready when placing your order. Return freight charges for items ordered in error are the customer’s responsibility. If you receive incorrect merchandise or are missing any items, contact us as soon as possible. We do our best to be accurate, but if we make a mistake, we want to correct it promptly. If previous returns are deemed unwarranted or abused, you may be asked to prepay return freight. Valid returns will have freight credited back, but you may be responsible for a portion of freight charges if all return guidelines are not followed. Also, please ensure only the returned merchandise is in the package—boxes containing extraneous items or trash may be discarded without credit.'
         }
       ],
-      rating: 4, // TODO: Hook this up, rating system not currently in place
-      collection: 'Balloons', // TODO: Hook this up, collection names are too long right now
-      price: '$XX.XX', // TODO: Hook this up, need to understand how this is calculated
     }
   })
 
