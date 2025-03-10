@@ -1,7 +1,8 @@
 <template>
   <section class="my-12">
     <LoftusSubHeading class="mb-8">Top Rated</LoftusSubHeading>
-    <LandingProductShowcase :items="topRated" :mobile-max="4" />
+    <LoftusLoadingSpinner v-if="collectionLoading" />
+    <LandingProductShowcase v-else :items="topRated" :mobile-max="4" />
   </section>
 </template>
 
@@ -12,13 +13,19 @@
   const CollectionsStore = useCollectionsStore()
   const { collectionId } = defineProps(['collectionId'])
 
-  const topRated = computed(() => {
-    const collection = CollectionsStore.getCollectionById(collectionId)
+  const collection = computed(() => {
+    return CollectionsStore.getCollectionById(collectionId)
+  })
 
-    if (!collection) {
+  const collectionLoading = computed(() => {
+    return !collection?.value || collection?.value.loading
+  })
+
+  const topRated = computed(() => {
+    if (collectionLoading.value) {
       return []
     }
 
-    return [collection.items[16], collection.items[15], collection.items[14], collection.items[5]]
+    return [collection.value.items[16], collection.value.items[15], collection.value.items[14], collection.value.items[5]]
   })
 </script>

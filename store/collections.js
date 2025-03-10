@@ -14,7 +14,15 @@ export const useCollectionsStore = defineStore('collections', {
   },
   actions: {
     // Mutations
-    UPDATE_LOADING(loading) {
+    UPDATE_LOADING({ collectionId, loading }) {
+      const record = this.collections.find(({ id }) => id === collectionId)
+
+      if (record) {
+        record.loading = loading
+      } else {
+        this.collections.push({ collectionId, loading })
+      }
+
       this.loading = loading
     },
     ADD_COLLECTION(collection) {
@@ -34,19 +42,19 @@ export const useCollectionsStore = defineStore('collections', {
       }
 
       try {
-        this.UPDATE_LOADING(true)
+        this.UPDATE_LOADING({ collectionId, loading: true })
 
         const res = await $fetch(`/api/collections/${collectionId}`)
         const collection = collectionFormatter(res)
         this.ADD_COLLECTION(collection)
 
         if (inflate) {
-          this.inflateCollectionItems(collection)
+          await this.inflateCollectionItems(collection)
         }
       } catch (e) {
         console.error(e.message)
       } finally {
-        this.UPDATE_LOADING(false)
+        this.UPDATE_LOADING({ collectionId, loading: false })
       }
     },
     inflateCollectionItems({ items }) {

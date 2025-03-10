@@ -1,7 +1,8 @@
 <template>
   <section class="py-12 bg-primary text-white">
     <LoftusSubHeading class="mb-8">Our Picks</LoftusSubHeading>
-    <LandingProductShowcase :items="ourPicks" :mobile-max="4" />
+    <LoftusLoadingSpinner v-if="collectionLoading" :alt="true" />
+    <LandingProductShowcase v-else :items="ourPicks" :mobile-max="4" />
   </section>
 </template>
 
@@ -12,13 +13,19 @@
   const CollectionsStore = useCollectionsStore()
   const { collectionId } = defineProps(['collectionId'])
 
-  const ourPicks = computed(() => {
-    const collection = CollectionsStore.getCollectionById(collectionId)
+  const collection = computed(() => {
+    return CollectionsStore.getCollectionById(collectionId)
+  })
 
-    if (!collection) {
+  const collectionLoading = computed(() => {
+    return !collection?.value || collection?.value.loading
+  })
+
+  const ourPicks = computed(() => {
+    if (collectionLoading.value) {
       return []
     }
 
-    return [collection.items[7], collection.items[8], collection.items[9], collection.items[10]]
+    return [collection.value.items[7], collection.value.items[8], collection.value.items[9], collection.value.items[10]]
   })
 </script>

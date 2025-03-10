@@ -2,7 +2,8 @@
   <section class="my-12">
     <LoftusSubHeading class="mb-8">Trending Products</LoftusSubHeading>
     <LandingTrendingProductsPillNav class="mb-8" :tabs="tabs" :selected="selectedTab" @change="tabChange" />
-    <LandingProductShowcase :items="trendingProducts" :mobile-max="6" />
+    <LoftusLoadingSpinner v-if="collectionLoading" />
+    <LandingProductShowcase v-else :items="trendingProducts" :mobile-max="6" />
   </section>
 </template>
 
@@ -22,20 +23,26 @@
   const CollectionsStore = useCollectionsStore()
   const { collectionId } = defineProps(['collectionId'])
 
-  const trendingProducts = computed(() => {
-    const collection = CollectionsStore.getCollectionById(collectionId)
+  const collection = computed(() => {
+    return CollectionsStore.getCollectionById(collectionId)
+  })
 
-    if (!collection) {
+  const collectionLoading = computed(() => {
+    return !collection?.value || collection?.value.loading
+  })
+
+  const trendingProducts = computed(() => {
+    if (collectionLoading.value) {
       return []
     }
 
     if (selectedTab.value.value === tabs[0].value) {
-      return collection.items.slice(0, 8)
+      return collection.value.items.slice(0, 8)
     } else if (selectedTab.value.value === tabs[1].value) {
-      return collection.items.slice(4, 12)
+      return collection.value.items.slice(4, 12)
     }
 
-    return collection.items.slice(10, 18)
+    return collection.value.items.slice(10, 18)
   })
 
   function tabChange(tab) {
