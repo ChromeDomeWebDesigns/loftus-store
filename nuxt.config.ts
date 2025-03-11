@@ -34,7 +34,7 @@ export default defineNuxtConfig({
     '@/assets/scss/app.scss'
   ],
 
-  modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss', '@nuxt/image'],
+  modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss'],
   compatibilityDate: '2025-02-23',
 
   nitro: {

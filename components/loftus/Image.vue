@@ -1,5 +1,5 @@
 <template>
-  <NuxtImg :src="src" :alt="alt" loading="lazy" />
+  <img :src="src" :alt="alt" />
 </template>
 
 <script setup>
