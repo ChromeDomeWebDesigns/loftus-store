@@ -77,86 +77,86 @@
   const pages = computed(() => {
     return [
       { name: 'All Products', href: '/collections/all-products', current: false },
-      { name: `${product.value?.title || 'Loading...'}`, current: true },
+      { name: `${item.value?.title || 'Loading...'}`, current: true },
     ]
   })
 
   const productItemDimensions = computed(() => {
-    if (!product.value?.length || !product.value?.width || !product.value?.height) {
+    if (!item.value?.length || !item.value?.width || !item.value?.height) {
       return null
     }
 
-    return `Item Dimensions: ${product.value.length}"L x ${product.value.width}"W x ${product.value.height}"H`
+    return `Item Dimensions: ${item.value.length}"L x ${item.value.width}"W x ${item.value.height}"H`
   })
 
   const productItemWeight = computed(() => {
-    if (!product.value?.weight) {
+    if (!item.value?.weight) {
       return null
     }
 
-    return `Item Weight: ${product.value.weight} lbs`
+    return `Item Weight: ${item.value.weight} lbs`
   })
 
   const productPackDimensions = computed(() => {
-    if (!product.value?.['inner-length'] || !product.value?.['inner-width'] || !product.value?.['inner-height']) {
+    if (!item.value?.['inner-length'] || !item.value?.['inner-width'] || !item.value?.['inner-height']) {
       return null
     }
 
-    return `Pack Dimensions: ${product.value['inner-length']}"L x ${product.value['inner-width']}"W x ${product.value['inner-height']}"H`
+    return `Pack Dimensions: ${item.value['inner-length']}"L x ${item.value['inner-width']}"W x ${item.value['inner-height']}"H`
   })
 
   const productPackWeight = computed(() => {
-    if (!product.value?.['inner-weight']) {
+    if (!item.value?.['inner-weight']) {
       return null
     }
 
-    return `Pack Weight: ${product.value['inner-weight']} lbs`
+    return `Pack Weight: ${item.value['inner-weight']} lbs`
   })
 
     const productPackQuantity = computed(() => {
-    if (!product.value?.['inner-quantity']) {
+    if (!item.value?.['inner-quantity']) {
       return null
     }
 
-    return `Pack Count: ${product.value['inner-quantity']}`
+    return `Pack Count: ${item.value['inner-quantity']}`
   })
 
   const productCaseDimensions = computed(() => {
-    if (!product.value?.['case-length'] || !product.value?.['case-width'] || !product.value?.['case-height']) {
+    if (!item.value?.['case-length'] || !item.value?.['case-width'] || !item.value?.['case-height']) {
       return null
     }
 
-    return `Case Dimensions: ${product.value['case-length']}"L x ${product.value['case-width']}"W x ${product.value['case-height']}"H`
+    return `Case Dimensions: ${item.value['case-length']}"L x ${item.value['case-width']}"W x ${item.value['case-height']}"H`
   })
 
   const productCaseWeight = computed(() => {
-    if (!product.value?.['case-weight']) {
+    if (!item.value?.['case-weight']) {
       return null
     }
 
-    return `Case Weight: ${product.value['case-weight']} lbs`
+    return `Case Weight: ${item.value['case-weight']} lbs`
   })
 
   const productCaseQuantity = computed(() => {
-    if (!product.value?.['case-quantity']) {
+    if (!item.value?.['case-quantity']) {
       return null
     }
 
-    return `Case Count: ${product.value['case-quantity']}`
+    return `Case Count: ${item.value['case-quantity']}`
   })
 
   const bulkDiscounts = computed(() => {
-    if (!product.value?.quantityDiscounts) {
+    if (!item.value?.quantityDiscounts) {
       return null
     }
 
-    const price = product.value.price.sale || product.value.price.value
+    const price = item.value.price.sale || item.value.price.value
     const discounts = []
 
-    const quantities = Object.keys(product.value.quantityDiscounts)
+    const quantities = Object.keys(item.value.quantityDiscounts)
 
     quantities.forEach((quantity, index) => {
-      const discountPercentage = product.value.quantityDiscounts[quantity]
+      const discountPercentage = item.value.quantityDiscounts[quantity]
       const value = price - (price * discountPercentage)
       let discountString = null
 
