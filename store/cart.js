@@ -24,8 +24,8 @@ export const useCartStore = defineStore('cart', {
     LOAD_CART_FROM_COOKIE(cart) {
       Object.assign(this.cart, cart)
     },
-    UPDATE_CART({ itemId, item }) {
-      this.cart[itemId] = item
+    UPDATE_CART({ itemId, data }) {
+      this.cart[itemId] = data
 
       Cookie.set(CART_COOKIE, JSON.stringify(this.cart), { expires: 7 })
     },
@@ -48,8 +48,8 @@ export const useCartStore = defineStore('cart', {
         this.LOAD_CART_FROM_COOKIE({})
       }
     },
-    updateCart ({ itemId, item }) {
-      this.UPDATE_CART({ itemId, item })
+    updateCart ({ itemId, quantity = 1 } = {}) {
+      this.UPDATE_CART({ itemId, data: { id: itemId, quantity }})
     },
     removeItemFromCart(itemId) {
       this.REMOVE_FROM_CART(itemId)

@@ -25,7 +25,7 @@
       </div>
 
       <div class="flex items-center p-2 m-auto w-full">
-        <LoftusButton icon="fas fa-cart-plus" class="!w-full justify-center bg-primary text-xxs text-white hover:bg-transparent hover:text-primary hover:border-primary"><span class="hidden phablet:block">Add to Cart</span></LoftusButton>
+        <LoftusButton @click="addToCart" icon="fas fa-cart-plus" class="!w-full justify-center bg-primary text-xxs text-white hover:bg-transparent hover:text-primary hover:border-primary"><span class="hidden phablet:block">Add to Cart</span></LoftusButton>
       </div>
     </template>
   </div>
@@ -35,7 +35,9 @@
   import { ref, computed } from 'vue'
   import { ChevronDownIcon } from '@heroicons/vue/16/solid'
   import { useItemsStore } from '@/store/items'
+  import { useCartStore } from '@/store/cart'
 
+  const CartStore = useCartStore()
   const ItemsStore = useItemsStore()
   const { itemId } = defineProps(['itemId'])
 
@@ -67,4 +69,8 @@
   })
 
   const quantity = ref(1)
+
+  function addToCart() {
+    CartStore.updateCart({ itemId })
+  }
 </script>

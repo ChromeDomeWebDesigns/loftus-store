@@ -28,7 +28,7 @@
           <i class="fas fa-user" />
         </LoftusLink>
         <LoftusButtonLink to="/cart" icon="fas fa-shopping-basket" variant="primary" hover="outline" class="w-max bg-primary text-white hover:bg-transparent hover:text-primary hover:border-primary">
-          <span class="cart-size">{{ cartSize }} items</span>
+          <client-only><span class="cart-size">{{ cartSize }} items</span></client-only>
         </LoftusButtonLink>
       </div>
     </div>
