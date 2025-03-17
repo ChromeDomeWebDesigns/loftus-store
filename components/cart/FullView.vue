@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto max-w-2xl px-4 laptop:px-8 desktop:px-12 py-16 lg:max-w-full">
+  <div class="mx-auto max-w-2xl px-4 laptop:px-8 desktop:px-12 my-12 lg:max-w-full">
     <h1 class="text-4xl font-bold tracking-tight text-gray-900">Shopping Cart</h1>
 
     <form class="mt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16">
