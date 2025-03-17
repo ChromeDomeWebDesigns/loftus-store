@@ -15,7 +15,7 @@
             </LoftusLink>
           </p>
           <div class="flex items-center">
-            <ProductsPrice :price="product.price" :quantity-discounts="product.quantityDiscounts" :quantity="quantity" :case-quantity="product['case-quantity']" class="text-lg font-bold text-gray-900 flex-1 mr-2" />
+            <ProductsPrice :price="product.price" :quantity-discounts="product.quantityDiscounts" :quantity="quantity" :sales-multiple="product['sales-multiple']" class="text-lg font-bold text-gray-900 flex-1 mr-2" />
             <div class="text-sm bg-primary text-white rounded p-1">
               <span class="pr-1">{{ product.rating }}</span>
               <i class="fas fa-star text-yellow-500" />
