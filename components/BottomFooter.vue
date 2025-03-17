@@ -115,12 +115,12 @@
     </div>
 
     <div class="flex items-center pb-2 pt-1">
-      <LoftusImage src="~/assets/svg/visa.svg" />
-      <LoftusImage src="~/assets/svg/mastercard.svg" />
-      <LoftusImage src="~/assets/svg/amex.svg" />
-      <LoftusImage src="~/assets/svg/paypal.svg" />
-      <LoftusImage src="~/assets/svg/diners-club.svg" />
-      <LoftusImage src="~/assets/svg/discover.svg" />
+      <LoftusImage src="/svg/visa.svg" />
+      <LoftusImage src="/svg/mastercard.svg" />
+      <LoftusImage src="/svg/amex.svg" />
+      <LoftusImage src="/svg/paypal.svg" />
+      <LoftusImage src="/svg/diners-club.svg" />
+      <LoftusImage src="/svg/discover.svg" />
     </div>
 
   </footer>
