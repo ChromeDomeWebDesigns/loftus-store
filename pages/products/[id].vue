@@ -53,9 +53,6 @@
             productPackDimensions.value,
             productPackWeight.value,
             productPackQuantity.value,
-            productCaseDimensions.value,
-            productCaseWeight.value,
-            productCaseQuantity.value,
           ],
         },
         {
@@ -119,30 +116,6 @@
     }
 
     return `Pack Count: ${item.value['inner-quantity']}`
-  })
-
-  const productCaseDimensions = computed(() => {
-    if (!item.value?.['case-length'] || !item.value?.['case-width'] || !item.value?.['case-height']) {
-      return null
-    }
-
-    return `Case Dimensions: ${item.value['case-length']}"L x ${item.value['case-width']}"W x ${item.value['case-height']}"H`
-  })
-
-  const productCaseWeight = computed(() => {
-    if (!item.value?.['case-weight']) {
-      return null
-    }
-
-    return `Case Weight: ${item.value['case-weight']} lbs`
-  })
-
-  const productCaseQuantity = computed(() => {
-    if (!item.value?.['case-quantity']) {
-      return null
-    }
-
-    return `Case Count: ${item.value['case-quantity']}`
   })
 
   const bulkDiscounts = computed(() => {

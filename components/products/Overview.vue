@@ -25,7 +25,7 @@
             <ChevronDownIcon class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4" aria-hidden="true" />
           </div>
         </div>
-        <p v-if="product['case-quantity']" class="tablet:text-xs mt-2">Case count: {{ product['case-quantity'] }} units</p>
+        <p v-if="product['sales-multiple']" class="tablet:text-xs mt-2">Sold in multiples: {{ product['sales-multiple'] }} units</p>
       </div>
 
       <div class="flex mt-4">

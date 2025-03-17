@@ -2,7 +2,7 @@
   <div>
     <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ product.title }}</h1>
 
-    <ProductsPrice :price="product.price" :quantity-discounts="product.quantityDiscounts" :quantity="quantity" :case-quantity="product['case-quantity']" class="mt-3 text-3xl" />
+    <ProductsPrice :price="product.price" :quantity-discounts="product.quantityDiscounts" :quantity="quantity" :sales-multiple="product['sales-multiple']" class="mt-3 text-3xl" />
 
     <ProductsRating :rating="product.rating" />
 

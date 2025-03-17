@@ -42,7 +42,11 @@ export const useItemsStore = defineStore('items', {
       try {
         this.UPDATE_LOADING({ itemId, loading: true })
 
-        const res = await $fetch(`/api/items/${itemId}`)
+        const res = await $fetch(`/api/items/${itemId}`, {
+          headers: {
+            Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3NDIyNzA2NTMsInN1YiI6MTE0MjZ9.DI8EgGdoXLD4MVwh7IPfAoiRI8mL-ZuQUB0AoOOdbIc'
+          }
+        })
         this.ADD_ITEM(itemFormatter(res))
       } catch (e) {
         console.error(e.message)

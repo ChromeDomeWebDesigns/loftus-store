@@ -16,7 +16,7 @@
   import { computed } from 'vue'
   import { prettyNumber } from '~/lib/utils'
 
-  const { price, quantityDiscounts, quantity, caseQuantity } = defineProps(['price', 'quantityDiscounts', 'quantity', 'caseQuantity' ])
+  const { price, quantityDiscounts, quantity, salesMultiple } = defineProps(['price', 'quantityDiscounts', 'quantity', 'salesMultiple' ])
 
   const bulkDiscount = computed(() => {
     if (!quantityDiscounts) {
@@ -61,13 +61,13 @@
   })
 
   const pricePerUnit = computed(() => {
-    if (!caseQuantity) {
+    if (!salesMultiple) {
       return null
     }
 
     const base = calculatedSale.value || calculatedPrice.value
 
-    return prettyNumber(base / caseQuantity)
+    return prettyNumber(base / salesMultiple)
   })
 
   function calculatePrice(val) {
