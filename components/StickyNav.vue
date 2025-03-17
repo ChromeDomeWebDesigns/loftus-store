@@ -36,14 +36,11 @@
 </template>
 
 <script setup>
-  import { ref, computed } from 'vue'
+  import { ref } from 'vue'
+
+  const { cart, cartSize } = defineProps(['cart', 'cartSize'])
 
   const showNav = ref(false)
-
-  const cartSize = computed(() => {
-    // TODO: Hook up Cart Information
-    return 0
-  })
 </script>
 
 <style lang="scss" scoped>

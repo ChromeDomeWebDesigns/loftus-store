@@ -10,7 +10,7 @@
 <script setup>
   import { ref } from 'vue'
   import { computed } from 'vue'
-  import { useCollectionsStore } from '~/store/collections'
+  import { useCollectionsStore } from '@/store/collections'
 
   const tabs = [
     { name: 'Featured', value: 'featured' },

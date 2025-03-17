@@ -7,7 +7,7 @@
 
 <script setup>
   import { computed } from 'vue'
-  import { useCollectionsStore } from '~/store/collections'
+  import { useCollectionsStore } from '@/store/collections'
 
   const pages = [
     { name: 'Collections', href: '/collections', current: false },

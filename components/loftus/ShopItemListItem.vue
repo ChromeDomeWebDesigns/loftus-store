@@ -34,7 +34,7 @@
 <script setup>
   import { ref, computed } from 'vue'
   import { ChevronDownIcon } from '@heroicons/vue/16/solid'
-  import { useItemsStore } from '~/store/items'
+  import { useItemsStore } from '@/store/items'
 
   const ItemsStore = useItemsStore()
   const { itemId } = defineProps(['itemId'])

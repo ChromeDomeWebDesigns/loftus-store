@@ -8,7 +8,7 @@
 
 <script setup>
   import { computed } from 'vue'
-  import { useCollectionsStore } from '~/store/collections'
+  import { useCollectionsStore } from '@/store/collections'
 
   const CollectionsStore = useCollectionsStore()
   const { collectionId } = defineProps(['collectionId'])

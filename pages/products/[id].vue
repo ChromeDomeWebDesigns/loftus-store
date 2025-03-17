@@ -13,9 +13,9 @@
 
 <script setup>
   import { ref, computed } from 'vue'
-  import { useCollectionsStore } from '~/store/collections'
-  import { useItemsStore } from '~/store/items'
-  import { prettyNumber } from '~/lib/utils'
+  import { useCollectionsStore } from '@/store/collections'
+  import { useItemsStore } from '@/store/items'
+  import { prettyNumber } from '@/lib/utils'
 
   const route = useRoute()
   const DEMO_COLLECTION_ID = ref('6732')

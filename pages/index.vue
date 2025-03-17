@@ -14,7 +14,7 @@
 
 <script setup>
   import { ref, computed } from 'vue'
-  import { useCollectionsStore } from '~/store/collections'
+  import { useCollectionsStore } from '@/store/collections'
 
   const CollectionsStore = useCollectionsStore()
   const DEMO_COLLECTION_ID = ref('6732')

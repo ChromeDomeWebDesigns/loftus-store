@@ -14,7 +14,7 @@
 
 <script setup>
   import { computed } from 'vue'
-  import { prettyNumber } from '~/lib/utils'
+  import { prettyNumber } from '@/lib/utils'
 
   const { price, quantityDiscounts, quantity, salesMultiple } = defineProps(['price', 'quantityDiscounts', 'quantity', 'salesMultiple' ])
 
