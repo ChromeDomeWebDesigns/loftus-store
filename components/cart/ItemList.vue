@@ -7,5 +7,5 @@
 </template>
 
 <script setup>
-    const { cart } = defineProps(['cart'])
+  const { cart } = defineProps(['cart'])
 </script>

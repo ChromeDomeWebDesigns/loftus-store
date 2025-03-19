@@ -5,7 +5,7 @@
     <dl class="mt-6 space-y-4">
       <div class="flex items-center justify-between">
         <dt class="text-sm text-gray-600">Subtotal</dt>
-        <dd class="text-sm font-medium text-gray-900">$99.00</dd>
+        <dd class="text-sm font-medium text-gray-900">${{ cartSubtotal }}</dd>
       </div>
       <div class="flex items-center justify-between border-t border-gray-200 pt-4">
         <dt class="flex items-center text-sm text-gray-600">
@@ -29,7 +29,7 @@
       </div>
       <div class="flex items-center justify-between border-t border-gray-200 pt-4">
         <dt class="text-base font-medium text-gray-900">Order total</dt>
-        <dd class="text-base font-medium text-gray-900">$112.32</dd>
+        <dd class="text-base font-medium text-gray-900">${{ cartTotal }}</dd>
       </div>
     </dl>
 
@@ -40,5 +40,18 @@
 </template>
 
 <script setup>
-import { QuestionMarkCircleIcon } from '@heroicons/vue/20/solid'
+  import { computed } from 'vue'
+  import { useCartStore } from '@/store/cart'
+  import { QuestionMarkCircleIcon } from '@heroicons/vue/20/solid'
+  import { prettyNumber } from '@/lib/utils'
+
+  const CartStore = useCartStore()
+
+  const cartSubtotal = computed(() => {
+    return prettyNumber(CartStore.getCartSubtotal, 2)
+  })
+
+  const cartTotal = computed(() => {
+    return prettyNumber(CartStore.getCartTotal, 2)
+  })
 </script>

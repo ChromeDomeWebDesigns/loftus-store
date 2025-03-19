@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import Cookie from 'js-cookie'
 import { CART_COOKIE } from '@/lib/constants'
 import { useItemsStore } from '@/store/items'
+import { getItemPrice } from '@/lib/calculators/price'
 
 export const useCartStore = defineStore('cart', {
   state: () => ({
@@ -13,6 +14,22 @@ export const useCartStore = defineStore('cart', {
     },
     getItemsInCart(state) {
       return Object.keys(state.cart)
+    },
+    getCartItemPrice: (state) => {
+      return (itemId) => {
+        const ItemsStore = useItemsStore()
+        const item = ItemsStore.getItemById(itemId)
+
+        return item ? getItemPrice({ item, quantity: state.cart[itemId].quantity }) : 0
+      }
+    },
+    getCartSubtotal(state) {
+      let subtotal = 0
+      Object.values(state.cart).forEach(item => { subtotal += this.getCartItemPrice(item.id) * item.quantity })
+      return subtotal
+    },
+    getCartTotal() {
+      return this.getCartSubtotal // TODO: Add freight and tax
     },
     isCartEmpty(state) {
       return Boolean(Object.values(state.cart).length <= 0)
