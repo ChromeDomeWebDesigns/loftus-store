@@ -1,27 +1,27 @@
 <template>
-  <li class="flex py-6 sm:py-10">
+  <li v-if="!itemLoading" class="flex py-6 sm:py-10">
     <div class="shrink-0">
-      <img :src="product.imageSrc" :alt="product.imageAlt" class="size-24 rounded-md object-cover sm:size-48" />
+      <img :src="mainImage" class="size-24 rounded-md object-cover sm:size-48" />
     </div>
 
     <div class="ml-4 flex flex-1 flex-col justify-between sm:ml-6">
       <div class="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
         <div>
-          <div class="flex justify-between">
-            <h3 class="text-sm">
-              <a :href="product.href" class="font-medium text-gray-700 hover:text-gray-800">{{ product.name }}</a>
-            </h3>
+          <div class="relative">
+            <p class="text-sm font-thin text-gray-500">{{ product.collection }}</p>
+            <p class="font-medium text-gray-900 truncate">
+              <LoftusLink :href="product.href" class="hover:text-primary hover:no-underline">
+                <span aria-hidden="true" class="absolute inset-0" />
+                {{ product.title }}
+              </LoftusLink>
+            </p>
           </div>
-          <div class="mt-1 flex text-sm">
-            <p class="text-gray-500">{{ product.color }}</p>
-            <p v-if="product.size" class="ml-4 border-l border-gray-200 pl-4 text-gray-500">{{ product.size }}</p>
-          </div>
-          <p class="mt-1 text-sm font-medium text-gray-900">{{ product.price }}</p>
+          <ProductsPrice :price="product.price" :quantity-discounts="product.quantityDiscounts" :quantity="quantity" :sales-multiple="product['sales-multiple']" class="text-2xl font-bold text-gray-900 flex-1 mr-2" />
         </div>
 
         <div class="mt-4 sm:mt-0 sm:pr-9">
           <div class="grid w-full max-w-16 grid-cols-1">
-            <select :aria-label="`Quantity, ${product.name}`" class="col-start-1 row-start-1 appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6">
+            <select class="col-start-1 row-start-1 appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -43,12 +43,6 @@
           </div>
         </div>
       </div>
-
-      <p class="mt-4 flex space-x-2 text-sm text-gray-700">
-        <CheckIcon v-if="product.inStock" class="size-5 shrink-0 text-green-500" aria-hidden="true" />
-        <ClockIcon v-else class="size-5 shrink-0 text-gray-300" aria-hidden="true" />
-        <span>{{ product.inStock ? 'In stock' : `Ships in ${product.leadTime}` }}</span>
-      </p>
     </div>
   </li>
 </template>
@@ -56,6 +50,35 @@
 <script setup>
   import { ChevronDownIcon } from '@heroicons/vue/16/solid'
   import { CheckIcon, ClockIcon, XMarkIcon } from '@heroicons/vue/20/solid'
+  import { useItemsStore } from '@/store/items'
 
-  const { product } = defineProps(['product'])
+  const ItemsStore = useItemsStore()
+  const { itemId, quantity } = defineProps(['itemId', 'quantity'])
+
+  const item = computed(() => {
+    return ItemsStore.getItemById(itemId)
+  })
+
+  const itemLoading = computed(() => {
+    return !item?.value || item?.value.loading
+  })
+
+  const product = computed(() => {
+    if (itemLoading.value) {
+      return {}
+    }
+
+    return {
+      ...item.value,
+      href: `/products/${itemId}`,
+    }
+  })
+
+  const mainImage = computed(() => {
+    if (!item.value?.images) {
+      return null
+    }
+
+    return item.value.images[0]
+  })
 </script>
