@@ -24,7 +24,7 @@
           <p v-if="product['sales-multiple']" class="tablet:text-xs mt-2">Sold in multiples: {{ product['sales-multiple'] }} units</p>
 
           <div class="absolute right-0 top-0">
-            <LoftusButton type="button" class="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500 border-0">
+            <LoftusButton @click="remove" class="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500 border-0">
               <span class="sr-only">Remove</span>
               <XMarkIcon class="size-5" aria-hidden="true" />
             </LoftusButton>
@@ -73,5 +73,9 @@
 
   function quantityChange(val) {
     CartStore.updateCart({ itemId, quantity: val })
+  }
+
+  function remove() {
+    CartStore.removeItemFromCart(itemId)
   }
 </script>
