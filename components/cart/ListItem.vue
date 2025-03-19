@@ -38,7 +38,9 @@
 <script setup>
   import { CheckIcon, ClockIcon, XMarkIcon } from '@heroicons/vue/20/solid'
   import { useItemsStore } from '@/store/items'
+  import { useCartStore } from '@/store/cart'
 
+  const CartStore = useCartStore()
   const ItemsStore = useItemsStore()
   const { itemId, quantity } = defineProps(['itemId', 'quantity'])
 
@@ -68,4 +70,8 @@
 
     return item.value.images[0]
   })
+
+  function quantityChange(val) {
+    CartStore.updateCart({ itemId, quantity: val })
+  }
 </script>

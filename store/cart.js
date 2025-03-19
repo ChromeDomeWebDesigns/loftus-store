@@ -55,9 +55,7 @@ export const useCartStore = defineStore('cart', {
       }
     },
     updateCart ({ itemId, quantity = 1 } = {}) {
-      const totalQuantity = this.cart[itemId] ? this.cart[itemId].quantity + quantity : quantity
-
-      this.UPDATE_CART({ itemId, data: { id: itemId, quantity: totalQuantity }})
+      this.UPDATE_CART({ itemId, data: { id: itemId, quantity }})
     },
     removeItemFromCart(itemId) {
       this.REMOVE_FROM_CART(itemId)
