@@ -15,7 +15,7 @@
             </LoftusLink>
           </p>
           <div class="flex items-center">
-            <ProductsPrice :price="product.price" :quantity-discounts="product.quantityDiscounts" :quantity="quantity" :sales-multiple="product['sales-multiple']" class="text-lg font-bold text-gray-900 flex-1 mr-2" />
+            <ProductsPrice :price="product.price" :quantity-discounts="product.quantityDiscounts" :sales-multiple="product['sales-multiple']" class="text-lg font-bold text-gray-900 flex-1 mr-2" />
             <div class="text-sm bg-primary text-white rounded p-1">
               <span class="pr-1">{{ product.rating }}</span>
               <i class="fas fa-star text-yellow-500" />
@@ -25,7 +25,7 @@
       </div>
 
       <div class="flex items-center p-2 m-auto w-full">
-        <LoftusButton @click="addToCart" icon="fas fa-cart-plus" class="!w-full justify-center bg-primary text-xxs text-white hover:bg-transparent hover:text-primary hover:border-primary"><span class="hidden phablet:block">Add to Cart</span></LoftusButton>
+        <LoftusButton @click="addToCart" icon="fas fa-cart-plus" class="!w-full justify-center bg-primary text-xxs text-white hover:bg-transparent hover:text-primary hover:border-primary">Add to Cart</LoftusButton>
       </div>
     </template>
   </div>
@@ -67,8 +67,6 @@
 
     return product.value.images[0]
   })
-
-  const quantity = ref(1)
 
   function addToCart() {
     CartStore.updateCart({ itemId })
