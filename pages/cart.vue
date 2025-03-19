@@ -1,6 +1,8 @@
 <template>
   <article>
-    <cart-full-view :cart="cart" />
+    <client-only>
+      <cart-full-view :cart="cart" />
+    </client-only>
   </article>
 </template>
 

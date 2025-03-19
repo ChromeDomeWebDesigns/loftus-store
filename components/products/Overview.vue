@@ -7,7 +7,7 @@
     <div class="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
       <ProductsMainInfo :product="product" :quantity="quantity" />
 
-      <div>
+      <div class="mt-6">
         <LoftusQuantitySelector :quantity="quantity" @quantity-change="quantityChange" />
         <p v-if="product['sales-multiple']" class="tablet:text-xs mt-2">Sold in multiples: {{ product['sales-multiple'] }} units</p>
       </div>
