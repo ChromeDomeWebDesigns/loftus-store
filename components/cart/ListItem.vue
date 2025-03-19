@@ -20,20 +20,8 @@
         </div>
 
         <div class="mt-4 sm:mt-0 sm:pr-9">
-          <div class="grid w-full max-w-16 grid-cols-1">
-            <select class="col-start-1 row-start-1 appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-            </select>
-            <ChevronDownIcon class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4" aria-hidden="true" />
-          </div>
+          <LoftusQuantitySelector :quantity="quantity" @quantity-change="quantityChange" />
+          <p v-if="product['sales-multiple']" class="tablet:text-xs mt-2">Sold in multiples: {{ product['sales-multiple'] }} units</p>
 
           <div class="absolute right-0 top-0">
             <LoftusButton type="button" class="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500 border-0">
@@ -48,7 +36,6 @@
 </template>
 
 <script setup>
-  import { ChevronDownIcon } from '@heroicons/vue/16/solid'
   import { CheckIcon, ClockIcon, XMarkIcon } from '@heroicons/vue/20/solid'
   import { useItemsStore } from '@/store/items'
 
