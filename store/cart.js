@@ -71,8 +71,14 @@ export const useCartStore = defineStore('cart', {
         this.LOAD_CART_FROM_COOKIE({})
       }
     },
-    updateCart ({ itemId, quantity = 1 } = {}) {
-      this.UPDATE_CART({ itemId, data: { id: itemId, quantity }})
+    updateCart ({ itemId, quantity = 1, mode = 'UPDATE' } = {}) {
+      let calculatedQuantity = quantity
+
+      if (mode === 'INCREMENT') {
+       calculatedQuantity = this.cart[itemId] ? this.cart[itemId].quantity + quantity : quantity
+      }
+
+      this.UPDATE_CART({ itemId, data: { id: itemId, quantity: calculatedQuantity }})
     },
     removeItemFromCart(itemId) {
       this.REMOVE_FROM_CART(itemId)

@@ -13,7 +13,7 @@
       </div>
 
       <div class="flex mt-4">
-        <LoftusButton type="submit" class="flex max-w-xs flex-1 items-center justify-center sm:w-full bg-primary text-white hover:bg-transparent hover:text-primary hover:border-primary">Add to cart</LoftusButton>
+        <LoftusButton @click="addToCart" class="flex max-w-xs flex-1 items-center justify-center sm:w-full bg-primary text-white hover:bg-transparent hover:text-primary hover:border-primary">Add to cart</LoftusButton>
       </div>
 
       <ProductsAdditionalInfo :product="product" />
@@ -23,11 +23,18 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useCartStore } from '@/store/cart'
+
+const CartStore = useCartStore()
 
 const { product } = defineProps(['product'])
 let quantity = ref(1)
 
 function quantityChange(val) {
   quantity.value = val
+}
+
+function addToCart() {
+  CartStore.updateCart({ itemId: product.id, quantity: quantity.value })
 }
 </script>

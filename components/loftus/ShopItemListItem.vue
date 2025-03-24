@@ -69,6 +69,6 @@
   })
 
   function addToCart() {
-    CartStore.updateCart({ itemId })
+    CartStore.updateCart({ itemId, mode: 'INCREMENT' })
   }
 </script>
