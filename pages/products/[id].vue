@@ -134,10 +134,10 @@
       let discountString = null
 
       if (index + 1 === quantities.length) {
-        discountString = `${quantity}+: $${prettyNumber(value)} each (${prettyNumber(discountPercentage * 100, 0)}% discount)`
+        discountString = `${quantity}+: $${prettyNumber(value)} each (${prettyNumber(Math.round(discountPercentage * 100), 0)}% discount)`
       } else {
         const nextQuantity = quantities[index + 1] - 1
-        discountString = `${quantity} - ${nextQuantity}: $${prettyNumber(value)} each (${prettyNumber(discountPercentage * 100, 0)}% discount)`
+        discountString = `${quantity} - ${nextQuantity}: $${prettyNumber(value)} each (${prettyNumber(Math.round(discountPercentage * 100), 0)}% discount)`
       }
 
       discounts.push(discountString)

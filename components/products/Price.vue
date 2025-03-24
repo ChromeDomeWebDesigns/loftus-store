@@ -23,7 +23,7 @@
     const value = calculateBulkDiscount({ quantity, quantityDiscounts })
     return {
       value,
-      formatted: prettyNumber(value * 100, 0)
+      formatted: prettyNumber(Math.round(value * 100), 0)
     }
   })
 
