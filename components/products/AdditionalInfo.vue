@@ -1,6 +1,6 @@
 <template>
   <div class="divide-y divide-gray-200 border-t mt-12">
-    <Disclosure as="div" v-for="detail in product.details" :key="detail.name" v-slot="{ open }">
+    <Disclosure as="div" v-for="detail in detailsBlock(product.details)" :key="detail.name" v-slot="{ open }">
       <h3>
         <DisclosureButton class="group relative flex w-full items-center justify-between py-6 text-left">
           <span :class="[open ? 'text-primary' : 'text-gray-900', 'text-sm font-medium']">{{ detail.name }}</span>
@@ -30,6 +30,10 @@ import {
 import { MinusIcon, PlusIcon } from '@heroicons/vue/24/outline'
 
 const { product } = defineProps(['product'])
+
+function detailsBlock(details) {
+  return details?.filter(detail => detail && (detail.items !== null || detail.description))
+}
 
 function listItems(items) {
   return items?.filter(item => item && item.value !== null)

@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="flex items-center tracking-tight flex-wrap gap-x-2">
-      <p class="text-gray-900" :class="price.sale ? 'line-through': ''">${{ basePrice }}</p>
-      <p v-if="price.sale" class="text-red-600">${{ salePrice }}</p>
+      <p class="text-gray-900" :class="price.sale ? 'line-through': ''">${{ basePrice.formatted }}</p>
+      <p v-if="price.sale" class="text-red-600">${{ salePrice.formatted }}</p>
     </div>
     <p v-if="pricePerUnit" class="font-normal text-xs laptop:text-xxxs text-gray-500 tracking-tight">(${{ pricePerUnit }} / unit)</p>
     <div v-if="bulkDiscount.value" class="mt-2 text-xxxs flex items-center rounded w-max p-2 bg-primary/10">
@@ -28,14 +28,20 @@
   })
 
   const basePrice = computed(() => {
-    return calculatePrice({ price: price.value, bulkDiscount: bulkDiscount.value.value })
+    return {
+      value: calculatePrice({ price: price.value, bulkDiscount: bulkDiscount.value.value }),
+      formatted: prettyNumber(calculatePrice({ price: price.value, bulkDiscount: bulkDiscount.value.value }), 2)
+    }
   })
 
   const salePrice = computed(() => {
-    return calculatePrice({ price: price.sale, bulkDiscount: bulkDiscount.value.value })
+    return {
+      value: calculatePrice({ price: price.sale, bulkDiscount: bulkDiscount.value.value }),
+      formatted: prettyNumber(calculatePrice({ price: price.sale, bulkDiscount: bulkDiscount.value.value }), 2)
+    }
   })
 
   const pricePerUnit = computed(() => {
-    return prettyNumber(calculatePricePerUnit({ price: price.sale || price.value, salesMultiple }))
+    return prettyNumber(calculatePricePerUnit({ price: price.sale ? salePrice.value.value : basePrice.value.value, salesMultiple }))
   })
 </script>
