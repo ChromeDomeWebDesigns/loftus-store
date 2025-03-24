@@ -1,12 +1,12 @@
 <template>
-  <li v-if="!itemLoading" class="flex py-6 sm:py-10">
+  <li v-if="!itemLoading" class="flex py-6 sm:py-4 overflow-hidden">
     <div class="shrink-0">
-      <img :src="mainImage" class="size-24 rounded-md object-cover sm:size-48" />
+      <img :src="mainImage" class="rounded-md object-cover size-16" />
     </div>
 
-    <div class="ml-4 flex flex-1 flex-col justify-between sm:ml-6">
+    <div class="ml-4 flex flex-1 flex-col justify-between sm:ml-6 tablet:text-sm">
       <div class="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
-        <div>
+        <div class="text-sm">
           <div class="relative">
             <p class="text-sm font-thin text-gray-500">{{ product.collection }}</p>
             <p class="font-medium text-gray-900 truncate">
