@@ -26,6 +26,6 @@
       return []
     }
 
-    return [collection.value.items[16], collection.value.items[15], collection.value.items[14], collection.value.items[5]]
+    return [collection.value.items[10], collection.value.items[11], collection.value.items[12], collection.value.items[13]]
   })
 </script>

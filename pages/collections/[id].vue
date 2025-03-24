@@ -15,7 +15,7 @@
   ]
 
   const CollectionsStore = useCollectionsStore()
-  const DEMO_COLLECTION_ID = '6732'
+  const DEMO_COLLECTION_ID = '12327'
 
   CollectionsStore.fetchCollectionById({ collectionId: DEMO_COLLECTION_ID, inflate: true })
 

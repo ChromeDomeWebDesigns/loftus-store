@@ -18,7 +18,7 @@
   import { prettyNumber } from '@/lib/utils'
 
   const route = useRoute()
-  const DEMO_COLLECTION_ID = ref('6732')
+  const DEMO_COLLECTION_ID = ref('12327')
   const itemId = route.params.id
 
   const CollectionsStore = useCollectionsStore()

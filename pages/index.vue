@@ -17,7 +17,7 @@
   import { useCollectionsStore } from '@/store/collections'
 
   const CollectionsStore = useCollectionsStore()
-  const DEMO_COLLECTION_ID = ref('6732')
+  const DEMO_COLLECTION_ID = ref('12327')
 
   CollectionsStore.fetchCollectionById({ collectionId: DEMO_COLLECTION_ID.value, inflate: true })
 </script>

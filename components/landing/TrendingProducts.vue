@@ -39,10 +39,10 @@
     if (selectedTab.value.value === tabs[0].value) {
       return collection.value.items.slice(0, 8)
     } else if (selectedTab.value.value === tabs[1].value) {
-      return collection.value.items.slice(4, 12)
+      return collection.value.items.slice(3, 11)
     }
 
-    return collection.value.items.slice(10, 18)
+    return collection.value.items.slice(5, 13)
   })
 
   function tabChange(tab) {
