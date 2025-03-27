@@ -6,7 +6,7 @@
           <span :class="[open ? 'text-primary' : 'text-gray-900', 'text-sm font-medium']">{{ detail.name }}</span>
           <span class="ml-6 flex items-center">
             <PlusIcon v-if="!open" class="block size-6 text-gray-400 group-hover:text-primary" aria-hidden="true" />
-            <MinusIcon v-else class="block size-6 text-primary group-hover:text-primaryDark" aria-hidden="true" />
+            <MinusIcon v-else class="block size-6 text-primary group-hover:text-primary-dark" aria-hidden="true" />
           </span>
         </DisclosureButton>
       </h3>

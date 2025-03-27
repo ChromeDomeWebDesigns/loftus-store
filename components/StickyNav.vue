@@ -27,9 +27,12 @@
         <LoftusLink to="/account" class="text-xl px-4 text-primary hover:text-primary-dark">
           <i class="fas fa-user" />
         </LoftusLink>
+        <CartPopover />
+        <!--
         <LoftusButtonLink to="/cart" icon="fas fa-shopping-basket" variant="primary" hover="outline" class="w-max bg-primary text-white hover:bg-transparent hover:text-primary hover:border-primary">
           <client-only><span class="cart-size">{{ cartSize }} items</span></client-only>
         </LoftusButtonLink>
+        -->
       </div>
     </div>
   </section>
@@ -37,8 +40,6 @@
 
 <script setup>
   import { ref } from 'vue'
-
-  const { cart, cartSize } = defineProps(['cart', 'cartSize'])
 
   const showNav = ref(false)
 </script>
