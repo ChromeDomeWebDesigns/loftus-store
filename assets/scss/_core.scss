@@ -16,6 +16,10 @@
   }
 }
 
+html {
+  overflow: visible !important; // overrides the HeadlessVue Dialog scroll lock
+}
+
 body {
   font-size: 1rem;
   max-width: 100vw;
