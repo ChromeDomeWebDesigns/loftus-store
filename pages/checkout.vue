@@ -1,7 +1,7 @@
 <template>
   <article>
     <client-only>
-      <checkout-full-view :cart="cart" />
+      <CheckoutFullView :cart="cart" />
     </client-only>
   </article>
 </template>

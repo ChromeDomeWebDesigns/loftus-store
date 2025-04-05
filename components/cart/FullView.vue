@@ -3,9 +3,9 @@
     <h1 class="text-4xl font-bold tracking-tight text-gray-900">Shopping Cart</h1>
 
     <form class="mt-8 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16">
-      <cart-item-list class="lg:col-span-7" :cart="cart" />
+      <CartListItem class="lg:col-span-7" :cart="cart" />
 
-      <cart-summary class="lg:col-span-5" />
+      <CartSummary class="lg:col-span-5" />
     </form>
   </div>
 </template>

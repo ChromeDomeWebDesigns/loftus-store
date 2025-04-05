@@ -1,7 +1,7 @@
 <template>
   <article>
     <client-only>
-      <cart-full-view :cart="cart" />
+      <CartFullView :cart="cart" />
     </client-only>
   </article>
 </template>
