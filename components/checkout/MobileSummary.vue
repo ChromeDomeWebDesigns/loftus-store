@@ -12,7 +12,7 @@
       <DisclosurePanel>
         <CheckoutItemList :cart="cart" />
 
-        <CheckoutSummaryTotal />
+        <CheckoutOrderSummary />
       </DisclosurePanel>
 
       <p v-if="!open" class="mt-6 flex items-center justify-between border-t border-gray-200 pt-6 text-sm font-medium text-gray-900">

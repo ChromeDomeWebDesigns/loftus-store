@@ -21,7 +21,7 @@
 
         <div class="mt-4 sm:mt-0 sm:pr-9">
           <div class="flex items-center text-sm">
-            <label class="mr-1">Quantity</label>
+            <label class="mr-1">Quantity:</label>
             <p>{{ quantity }}</p>
           </div>
           <p v-if="product['sales-multiple']" class="tablet:text-xs">Sold in multiples: {{ product['sales-multiple'] }} units</p>

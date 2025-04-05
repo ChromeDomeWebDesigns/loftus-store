@@ -1,7 +1,7 @@
 <template>
   <section>
     <CheckoutItemList :cart="cart" class="max-h-[80vh] overflow-y-scroll" />
-    <CheckoutSummaryTotal />
+    <CheckoutOrderSummary />
   </section>
 </template>
 

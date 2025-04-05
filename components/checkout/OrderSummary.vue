@@ -38,7 +38,7 @@
 
 <script setup>
 const subtotal = '$108.00'
-const discount = { code: 'CHEAPSKATE', amount: '$16.00' }
+const discount = { code: 'LOFTUS', amount: '$16.00' }
 const taxes = '$9.92'
 const shipping = '$8.00'
 const total = '$141.92'
