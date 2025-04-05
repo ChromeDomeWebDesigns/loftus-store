@@ -10,20 +10,20 @@
       <div class="flex items-center justify-between border-t border-gray-200 pt-4">
         <dt class="flex items-center text-sm text-gray-600">
           <span>Freight estimate</span>
-          <a href="#" class="ml-2 shrink-0 text-gray-400 hover:text-gray-500">
+          <LoftusLink to="#" class="ml-2 shrink-0 text-gray-400 hover:text-gray-500">
             <span class="sr-only">Learn more about how shipping is calculated</span>
             <QuestionMarkCircleIcon class="size-5" aria-hidden="true" />
-          </a>
+          </LoftusLink>
         </dt>
         <dd class="text-sm font-medium text-gray-900">TBD</dd>
       </div>
       <div class="flex items-center justify-between border-t border-gray-200 pt-4">
         <dt class="flex text-sm text-gray-600">
           <span>Tax estimate</span>
-          <a href="#" class="ml-2 shrink-0 text-gray-400 hover:text-gray-500">
+          <LoftusLink to="#" class="ml-2 shrink-0 text-gray-400 hover:text-gray-500">
             <span class="sr-only">Learn more about how tax is calculated</span>
             <QuestionMarkCircleIcon class="size-5" aria-hidden="true" />
-          </a>
+          </LoftusLink>
         </dt>
         <dd class="text-sm font-medium text-gray-900">TBD</dd>
       </div>

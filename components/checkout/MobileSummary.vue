@@ -17,21 +17,23 @@
 
       <p v-if="!open" class="mt-6 flex items-center justify-between border-t border-gray-200 pt-6 text-sm font-medium text-gray-900">
         <span class="text-base">Total</span>
-        <span class="text-base">{{ total }}</span>
+        <span class="text-base">${{ cartTotal }}</span>
       </p>
     </Disclosure>
   </section>
 </template>
 
 <script setup>
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
-import { LockClosedIcon } from '@heroicons/vue/20/solid'
+  import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
+  import { computed } from 'vue'
+  import { useCartStore } from '@/store/cart'
+  import { prettyNumber } from '@/lib/utils'
 
-const { cart } = defineProps(['cart'])
+  const { cart } = defineProps(['cart'])
 
-const subtotal = '$108.00'
-const discount = { code: 'CHEAPSKATE', amount: '$16.00' }
-const taxes = '$9.92'
-const shipping = '$8.00'
-const total = '$141.92'
+  const CartStore = useCartStore()
+
+  const cartTotal = computed(() => {
+    return prettyNumber(CartStore.getCartTotal, 2)
+  })
 </script>

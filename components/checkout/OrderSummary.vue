@@ -11,7 +11,7 @@
     <dl class="mt-10 space-y-6 text-sm font-medium text-gray-500">
       <div class="flex justify-between">
         <dt>Subtotal</dt>
-        <dd class="text-gray-900">{{ subtotal }}</dd>
+        <dd class="text-gray-900">${{ cartSubtotal }}</dd>
       </div>
       <div class="flex justify-between">
         <dt class="flex">
@@ -20,26 +20,49 @@
         </dt>
         <dd class="text-gray-900">-{{ discount.amount }}</dd>
       </div>
-      <div class="flex justify-between">
-        <dt>Taxes</dt>
-        <dd class="text-gray-900">{{ taxes }}</dd>
+      <div class="flex items-center justify-between">
+        <dt class="flex">
+          <span>Freight</span>
+          <LoftusLink to="#" class="ml-2 shrink-0 text-gray-400 hover:text-gray-500">
+            <span class="sr-only">Learn more about how shipping is calculated</span>
+            <QuestionMarkCircleIcon class="size-5" aria-hidden="true" />
+          </LoftusLink>
+        </dt>
+        <dd class="text-gray-900">TBD</dd>
       </div>
-      <div class="flex justify-between">
-        <dt>Shipping</dt>
-        <dd class="text-gray-900">{{ shipping }}</dd>
+      <div class="flex items-center justify-between">
+        <dt class="flex">
+          <span>Tax</span>
+          <LoftusLink to="#" class="ml-2 shrink-0 text-gray-400 hover:text-gray-500">
+            <span class="sr-only">Learn more about how tax is calculated</span>
+            <QuestionMarkCircleIcon class="size-5" aria-hidden="true" />
+          </LoftusLink>
+        </dt>
+        <dd class="text-gray-900">TBD</dd>
       </div>
       <div class="flex items-center justify-between border-t border-gray-200 pt-6 text-gray-900">
         <dt>Total</dt>
-        <dd class="text-base">{{ total }}</dd>
+        <dd class="text-base">${{ cartTotal }}</dd>
       </div>
     </dl>
   </div>
 </template>
 
 <script setup>
-const subtotal = '$108.00'
-const discount = { code: 'LOFTUS', amount: '$16.00' }
-const taxes = '$9.92'
-const shipping = '$8.00'
-const total = '$141.92'
+  import { computed } from 'vue'
+  import { useCartStore } from '@/store/cart'
+  import { QuestionMarkCircleIcon } from '@heroicons/vue/20/solid'
+  import { prettyNumber } from '@/lib/utils'
+
+  const CartStore = useCartStore()
+
+  const discount = { code: 'LOFTUS', amount: '$16.00' }
+
+  const cartSubtotal = computed(() => {
+    return prettyNumber(CartStore.getCartSubtotal, 2)
+  })
+
+  const cartTotal = computed(() => {
+    return prettyNumber(CartStore.getCartTotal, 2)
+  })
 </script>
