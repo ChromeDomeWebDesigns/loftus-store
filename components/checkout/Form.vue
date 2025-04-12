@@ -41,7 +41,11 @@
           </div>
         </div>
 
+        <div class="my-8">
+          <h5 class="font-bold">Payment</h5>
 
+          <div id="dropin-container"></div>
+        </div>
 
         <div class="grid grid-cols-12 gap-x-4 gap-y-2 my-8">
           <h5 class="col-span-full font-bold">Shipping address</h5>
@@ -148,7 +152,7 @@
           </div>
         </div>
 
-        <LoftusButton class="my-8 !w-full justify-center bg-primary text-white hover:bg-transparent hover:text-primary hover:border-primary">Submit Order</LoftusButton>
+        <LoftusButton type="button" class="my-8 !w-full justify-center bg-primary text-white hover:bg-transparent hover:text-primary hover:border-primary">Submit Order</LoftusButton>
 
         <p class="mt-6 flex justify-center text-sm font-medium text-gray-500">
           <LockClosedIcon class="mr-1.5 size-5 text-gray-400" aria-hidden="true" />
@@ -161,7 +165,28 @@
 
 <script setup>
 import { ref } from 'vue'
+import dropin, { Dropin } from 'braintree-web-drop-in'
 import { LockClosedIcon } from '@heroicons/vue/20/solid'
 
 const billingSameAsShipping = ref(true)
+const dropinInstance = ref(Dropin)
+
+try {
+  dropin.create(
+    {
+      authorization: 'sandbox_g42y39zw_348pk9cgf3bgyw2b',
+      container: '#dropin-container',
+    },
+    (err, instance) => {
+      if (err) {
+        console.error('Error creating Drop-in:', err)
+        return
+      }
+      dropinInstance.value = instance
+    }
+  )
+} catch (error) {
+  console.error('Error:', error)
+}
+
 </script>
