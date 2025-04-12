@@ -152,7 +152,7 @@
           </div>
         </div>
 
-        <LoftusButton type="button" class="my-8 !w-full justify-center bg-primary text-white hover:bg-transparent hover:text-primary hover:border-primary">Submit Order</LoftusButton>
+        <LoftusButtonLink to="/" class="my-8 !w-full justify-center bg-primary text-white hover:bg-transparent hover:text-primary hover:border-primary">Submit Order</LoftusButtonLink>
 
         <p class="mt-6 flex justify-center text-sm font-medium text-gray-500">
           <LockClosedIcon class="mr-1.5 size-5 text-gray-400" aria-hidden="true" />
