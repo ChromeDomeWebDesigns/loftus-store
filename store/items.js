@@ -44,7 +44,7 @@ export const useItemsStore = defineStore('items', {
 
         const res = await $fetch(`/api/items/${itemId}`, {
           headers: {
-            Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3NDMxMzIzOTgsInN1YiI6MTE0MjZ9.-UKwqRkfoiJy2-4VxMy9Sua6-uhrFxHD6MqLXiHGIK0'
+            Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3NDQ1MDczNTEsInN1YiI6MTE0Nzd9.aIQ35_XB0nhJM2JR-qn7W9iXc-jRBlgPDlAtNQ1FHzU'
           }
         })
         this.ADD_ITEM(itemFormatter(res))

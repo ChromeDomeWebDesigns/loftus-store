@@ -3,7 +3,7 @@
     <Disclosure as="div" class="mx-auto max-w-lg" v-slot="{ open }">
       <div class="flex items-center justify-between">
         <h2 id="order-heading" class="text-lg font-medium text-gray-900">Your Order</h2>
-        <DisclosureButton class="font-medium text-indigo-600 hover:text-indigo-500">
+        <DisclosureButton class="font-medium text-primary hover:text-primary-dark">
           <span v-if="open">Hide full summary</span>
           <span v-if="!open">Show full summary</span>
         </DisclosureButton>

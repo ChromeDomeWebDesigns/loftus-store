@@ -3,7 +3,7 @@
     <form>
       <label for="discount-code" class="block text-sm/6 font-medium text-gray-700">Discount code</label>
       <div class="mt-2 flex space-x-4">
-        <input type="text" id="discount-code" name="discount-code" class="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+        <LoftusInput type="text" id="discount-code" name="discount-code" class="px-3 py-2" />
         <LoftusButton type="button" class="text-gray-600 bg-gray-200 hover:bg-gray-300">Apply</LoftusButton>
       </div>
     </form>
