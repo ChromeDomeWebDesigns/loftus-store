@@ -36,7 +36,7 @@
           <div class="col-span-full">
             <label for="phone" class="block text-sm/6 font-medium text-gray-700">Phone number</label>
             <div class="mt-1">
-              <LoftusInput type="tel" id="phone" name="phone" autocomplete="email" class="px-3 py-2" />
+              <LoftusInput type="tel" id="phone" name="phone" autocomplete="tel" class="px-3 py-2" />
             </div>
           </div>
         </div>
